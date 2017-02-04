@@ -2,12 +2,11 @@
 global.PACKAGE_NAME = 'Eventful';
 
 const express       = require('express'),
-    bodyParser      = require('body-parser'),
-    RAPI            = require('rapi-js-package'),
-    crypto          = require('crypto'),
-    oauthSignature  = require('oauth-signature'),
-    fs              = require('fs'),
     lib             = require('./lib'),
+    bodyParser      = require('body-parser'),
+    RAPI            = require('../package.js'),
+    API             = lib.init(),
+    fs              = require('fs'),
     _               = lib.callback;
 
 const PORT          = process.env.PORT || 8080;
@@ -39,19 +38,12 @@ for(let func in control) {
     } = control[func];
 
     app.post(`/api/${PACKAGE_NAME}/${func}`, _(function* (req, res) {
-        let opts = {
-            'oauth_version|String': '1.0', 
-            'oauth_signature_method|String': 'HMAC-SHA1',
-            'oauth_timestamp|Number': new Date()/1e3|0,
-            'oauth_nonce|String': crypto.randomBytes(20).toString('hex')
-        };
         let auth = {};
+        let opts = {};
         let r = {
             callback     : "",
             contextWrites: {}
         };
-
-        req.body.args = lib.clearArgs(req.body.args);
 
         try {
             for(let arg in args) {
@@ -59,18 +51,17 @@ for(let func in control) {
                 opts[args[arg] + '|' + argarr[0]] = req.body.args[argarr[1]];
             }
 
-            opts['oauth_signature|String'] = oauthSignature.generate(
-                method, 
-                url, 
-                lib.convert(opts)
-                //req.body.args['consumerSecret'], 
-                //req.body.args['oauthTokenSecret']
-            );
+            options.query  = opts;
+            options.method = method;
 
-            options.query   = opts;
-            options.method  = method;
+            let result = yield new RAPI(url).auth({
+                type:           'oauth',
+                consumerKey:    req.body.args['consumerKey'],
+                consumerSecret: req.body.args['consumerSecret'],
+                token:          req.body.args['oauthToken'],
+                tokenSecret:    req.body.args['oauthTokenSecret']
+            }).request(options);
 
-            let result = yield new RAPI(url).request(options);
             let format = yield lib.parse(result);
 
             r.callback            = 'success';
@@ -83,6 +74,29 @@ for(let func in control) {
         res.status(200).send(r);
     }));
 }
+
+for(let route in API) {
+    app.post(`/api/${PACKAGE_NAME}/${route}`, _(function* (req, res) {
+        let response;
+        let r = {
+            callback     : "",
+            contextWrites: {}
+        };
+
+        try {
+            response              = yield API[route](req, res);
+            r.callback            = 'success';
+            r.contextWrites['to'] = lib.success(response);
+        } catch(e) {
+            console.log(e);
+            r.callback            = 'error';
+            r.contextWrites['to'] = lib.error(e);
+
+        }
+        res.status(200).send(r);
+    }));
+}
+
 
 app.listen(PORT);
 module.exports = app;

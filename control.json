@@ -1,22 +1,10 @@
 {
-    "getAccessToken": {
-        "url": "http://api.eventful.com/rest",
-        "method": "GET",
-        "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
-            "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
-            "String|oauthTokenSecret": "!tokenSecret",
-            "String|": ""
-        }
-    },
     "createEvent": {
         "url": "http://api.eventful.com/rest/events/new",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -38,10 +26,10 @@
         "url": "http://api.eventful.com/rest/events/get",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id",
             "String|imageSizes": "image_sizes"
@@ -51,8 +39,8 @@
         "url": "http://api.eventful.com/rest/events/modify",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -75,8 +63,8 @@
         "url": "http://api.eventful.com/rest/events/withdraw",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -88,10 +76,10 @@
         "url": "http://api.eventful.com/rest/events/restore",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -100,10 +88,10 @@
         "url": "http://api.eventful.com/rest/events/search",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|keywords": "keywords",
             "String|location": "location",
@@ -128,10 +116,10 @@
         "url": "http://api.eventful.com/rest/events/reindex",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -140,10 +128,10 @@
         "url": "http://api.eventful.com/rest/events/ical",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|keywords": "$keywords",
             "String|location": "location",
@@ -159,10 +147,10 @@
         "url": "http://api.eventful.com/rest/events/rss",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|keywords": "$keywords",
             "String|location": "location",
@@ -178,10 +166,10 @@
         "url": "http://api.eventful.com/rest/events/tags/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -190,10 +178,10 @@
         "url": "http://api.eventful.com/rest/events/going/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -202,8 +190,8 @@
         "url": "http://api.eventful.com/rest/events/tags/new",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -215,8 +203,8 @@
         "url": "http://api.eventful.com/rest/events/tags/remove",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -228,8 +216,8 @@
         "url": "http://api.eventful.com/rest/events/comments/new",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -241,8 +229,8 @@
         "url": "http://api.eventful.com/rest/events/comments/modify",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -254,8 +242,8 @@
         "url": "http://api.eventful.com/rest/events/comments/delete",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -266,8 +254,8 @@
         "url": "http://api.eventful.com/rest/events/links/new",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -281,8 +269,8 @@
         "url": "http://api.eventful.com/rest/events/links/delete",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -293,8 +281,8 @@
         "url": "http://api.eventful.com/rest/events/images/add",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -306,8 +294,8 @@
         "url": "http://api.eventful.com/rest/events/images/remove",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -319,8 +307,8 @@
         "url": "http://api.eventful.com/rest/events/performers/add",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -332,8 +320,8 @@
         "url": "http://api.eventful.com/rest/events/performers/remove",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -345,8 +333,8 @@
         "url": "http://api.eventful.com/rest/events/properties/add",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -359,8 +347,8 @@
         "url": "http://api.eventful.com/rest/events/properties/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -371,8 +359,8 @@
         "url": "http://api.eventful.com/rest/events/properties/remove",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -385,8 +373,8 @@
         "url": "http://api.eventful.com/rest/events/categories/add",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -398,8 +386,8 @@
         "url": "http://api.eventful.com/rest/events/categories/remove",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -411,10 +399,10 @@
         "url": "http://api.eventful.com/rest/events/dates/resolve",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|when": "$when"
         }
@@ -423,10 +411,10 @@
         "url": "http://api.eventful.com/rest/venues/new",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "$oauth_token",
+            "String|oauthToken": "$!oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
             "String|name": "$name",
             "String|address": "address",
@@ -446,10 +434,10 @@
         "url": "http://api.eventful.com/rest/venues/get",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id",
             "String|mature": "mature"
@@ -459,8 +447,8 @@
         "url": "http://api.eventful.com/rest/venues/modify",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -483,8 +471,8 @@
         "url": "http://api.eventful.com/rest/venues/withdraw",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -496,8 +484,8 @@
         "url": "http://api.eventful.com/rest/venues/restore",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -508,10 +496,10 @@
         "url": "http://api.eventful.com/rest/venues/search",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|keywords": "$keywords",
             "String|location": "location",
@@ -528,10 +516,10 @@
         "url": "http://api.eventful.com/rest/venues/tags/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -540,8 +528,8 @@
         "url": "http://api.eventful.com/rest/venues/tags/new",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -553,8 +541,8 @@
         "url": "http://api.eventful.com/rest/venues/tags/delete",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -566,10 +554,10 @@
         "url": "http://api.eventful.com/rest/venues/ical",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -578,10 +566,10 @@
         "url": "http://api.eventful.com/rest/venues/rss",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -590,8 +578,8 @@
         "url": "http://api.eventful.com/rest/venues/comments/new",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -603,8 +591,8 @@
         "url": "http://api.eventful.com/rest/venues/comments/modify",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -616,8 +604,8 @@
         "url": "http://api.eventful.com/rest/venues/comments/delete",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -628,8 +616,8 @@
         "url": "http://api.eventful.com/rest/venues/links/new",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -643,8 +631,8 @@
         "url": "http://api.eventful.com/rest/venues/links/delete",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -655,8 +643,8 @@
         "url": "http://api.eventful.com/rest/venues/properties/add",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -669,10 +657,10 @@
         "url": "http://api.eventful.com/rest/venues/properties/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -681,8 +669,8 @@
         "url": "http://api.eventful.com/rest/venues/properties/remove",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -695,8 +683,8 @@
         "url": "http://api.eventful.com/rest/venues/resolve",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -707,8 +695,8 @@
         "url": "http://api.eventful.com/rest/users/calendars/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -719,8 +707,8 @@
         "url": "http://api.eventful.com/rest/users/calendars/get",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -731,10 +719,10 @@
         "url": "http://api.eventful.com/rest/users/get",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id",
             "String|listCounts": "list-counts"
@@ -744,10 +732,10 @@
         "url": "http://api.eventful.com/rest/users/search",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|keywords": "$keywords",
             "String|sortOrder": "sort_order",
@@ -760,10 +748,10 @@
         "url": "http://api.eventful.com/rest/users/groups/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -772,10 +760,10 @@
         "url": "http://api.eventful.com/rest/users/venue/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -784,10 +772,10 @@
         "url": "http://api.eventful.com/rest/users/locales/add",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id",
             "String|locale": "$locale"
@@ -797,10 +785,10 @@
         "url": "http://api.eventful.com/rest/users/locales/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -809,10 +797,10 @@
         "url": "http://api.eventful.com/rest/users/locales/delete",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id",
             "String|locale": "locale"
@@ -822,8 +810,8 @@
         "url": "http://api.eventful.com/rest/users/going/remove",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -834,8 +822,8 @@
         "url": "http://api.eventful.com/rest/users/going/remove",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -846,8 +834,8 @@
         "url": "http://api.eventful.com/rest/performers/images/add",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -859,8 +847,8 @@
         "url": "http://api.eventful.com/rest/performers/images/add",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -874,10 +862,10 @@
         "url": "http://api.eventful.com/rest/performers/get",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id",
             "Boolean|showEvents": "$show_events",
@@ -888,8 +876,8 @@
         "url": "http://api.eventful.com/rest/performers/modify",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -904,10 +892,10 @@
         "url": "http://api.eventful.com/rest/performers/search",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|keywords": "$keywords",
             "String|countOnly": "count_only",
@@ -921,8 +909,8 @@
         "url": "http://api.eventful.com/rest/performers/withdraw",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -934,8 +922,8 @@
         "url": "http://api.eventful.com/rest/performers/links/add",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -949,8 +937,8 @@
         "url": "http://api.eventful.com/rest/performers/links/remove",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -962,8 +950,8 @@
         "url": "http://api.eventful.com/rest/performers/images/add",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
@@ -975,10 +963,10 @@
         "url": "http://api.eventful.com/rest/performers/images/remove",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id",
             "String|imageId": "$image_id"
@@ -988,10 +976,10 @@
         "url": "http://api.eventful.com/rest/performers/events/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id",
             "String|pageSize": "page_size",
@@ -1002,10 +990,10 @@
         "url": "http://api.eventful.com/rest/performers/xids/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|source": "$source",
             "Number|ids": "$ids"
@@ -1015,10 +1003,10 @@
         "url": "http://api.eventful.com/rest/demands/get",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id"
         }
@@ -1027,10 +1015,10 @@
         "url": "http://api.eventful.com/rest/demands/search",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|keywords": "keywords",
             "String|location": "location",
@@ -1045,10 +1033,10 @@
         "url": "http://api.eventful.com/rest/categories/list",
         "method": "GET",
         "args": {
-            "credentials|appKey": "app_key",
-            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|appKey": "$app_key",
+            "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "oauth_token",
+            "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|subcategories": "subcategories",
             "String|aliases": "aliases"
