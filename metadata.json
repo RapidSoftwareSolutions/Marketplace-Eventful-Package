@@ -1,0 +1,4982 @@
+{
+  "package": "Eventful",
+  "tagline": "Eventful API Package",
+  "description": "Search events and venues on Eventful's local event database.",
+  "image": "http://logo.clearbit.com/sensegrow.com",
+  "keywords": [
+    "API",
+    "concert",
+    "event",
+    "events",
+    "local",
+    "music",
+    "party",
+    "Social"
+  ],
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-Eventful-Package",
+  "accounts": {
+    "domain": "eventful.com",
+    "credentials": [
+      "appKey",
+      "consumerKey",
+      "consumerSecret"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "getAccessToken",
+      "description": "",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "",
+          "type": "String",
+          "info": "",
+          "required": true
+        },
+        {
+          "name": "",
+          "type": "String",
+          "info": "",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "createEvent",
+      "description": "Add a new event record.",
+      "auth": true,
+      "uauth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "info": "The event title.",
+          "required": true
+        },
+        {
+          "name": "startTime",
+          "type": "String",
+          "info": "The event start time in ISO 8601 format (e.g. '2005-03-01T19:00:00') or a readable alternative (e.g. '2005-03-01 19:00:00').",
+          "required": true
+        },
+        {
+          "name": "stopTime",
+          "type": "String",
+          "info": "The event stop time, if any, in ISO 8601 format (see above).",
+          "required": false
+        },
+        {
+          "name": "tzOlsonPath",
+          "type": "String",
+          "info": "The event timezone, as listed in the Olson timezones database (e.g. \"America/New_York\")",
+          "required": false
+        },
+        {
+          "name": "allDay",
+          "type": "Boolean",
+          "info": "True (\"1\") if the event is an all-day event, false (\"0\") otherwise. (optional)",
+          "required": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "info": "The event description.",
+          "required": false
+        },
+        {
+          "name": "privacy",
+          "type": "String",
+          "info": "The privacy setting for this event. (1 = public, 2 = private, 3 = semi-private) (optional, defaults to 1)",
+          "required": false
+        },
+        {
+          "name": "tags",
+          "type": "String",
+          "info": "A space-delimited list of tags.",
+          "required": false
+        },
+        {
+          "name": "free",
+          "type": "Boolean",
+          "info": "True (\"1\") if the event is free, false (\"0\") otherwise.",
+          "required": false
+        },
+        {
+          "name": "price",
+          "type": "String",
+          "info": "A text string describing the event price. For example, this could indicate a price range (\"$15 - $35\"), free but donations requested (\"$10 donation suggested\"), or other special instructions (\"Adults $15, children under eight $5\"). Don't pass this parameter or leave it blank if there is no price information",
+          "required": false
+        },
+        {
+          "name": "venueId",
+          "type": "Number",
+          "info": "The ID of the venue where this event occurs.",
+          "required": false
+        },
+        {
+          "name": "parentId",
+          "type": "String",
+          "info": "The ID of this event's parent event.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleEvent",
+      "description": "Get an event record.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the requested event.",
+          "required": true
+        },
+        {
+          "name": "imageSizes",
+          "type": "String",
+          "info": "A comma separted list of imageSizes desired.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "updateSingleEvent",
+      "uauth": true,
+      "description": "Modify an event record.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The event ID to modify.",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "String",
+          "info": "The event title.",
+          "required": false
+        },
+        {
+          "name": "startTime",
+          "type": "String",
+          "info": "The event start time in ISO 8601 format (e.g. '2005-03-01T19:00:00') or a readable alternative (e.g. '2005-03-01 19:00:00').",
+          "required": false
+        },
+        {
+          "name": "stopTime",
+          "type": "String",
+          "info": "The event stop time, if any, in ISO 8601 format (see above).",
+          "required": false
+        },
+        {
+          "name": "tzOlsonPath",
+          "type": "String",
+          "info": "The event timezone, as listed in the Olson timezones database (e.g. \"America/New_York\")",
+          "required": false
+        },
+        {
+          "name": "allDay",
+          "type": "Boolean",
+          "info": "True (\"1\") if the event is an all-day event, false (\"0\") otherwise. (optional)",
+          "required": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "info": "The event description.",
+          "required": false
+        },
+        {
+          "name": "privacy",
+          "type": "String",
+          "info": "The privacy setting for this event. (1 = public, 2 = private, 3 = semi-private) (optional, defaults to 1)",
+          "required": false
+        },
+        {
+          "name": "tags",
+          "type": "String",
+          "info": "A space-delimited list of tags.",
+          "required": false
+        },
+        {
+          "name": "free",
+          "type": "Boolean",
+          "info": "True (\"1\") if the event is free, false (\"0\") otherwise.",
+          "required": false
+        },
+        {
+          "name": "price",
+          "type": "String",
+          "info": "A text string describing the event price. For example, this could indicate a price range (\"$15 - $35\"), free but donations requested (\"$10 donation suggested\"), or other special instructions (\"Adults $15, children under eight $5\"). Don't pass this parameter or leave it blank if there is no price information",
+          "required": false
+        },
+        {
+          "name": "venueId",
+          "type": "Number",
+          "info": "The ID of the venue where this event occurs.",
+          "required": false
+        },
+        {
+          "name": "parentId",
+          "type": "String",
+          "info": "The ID of this event's parent event.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "deleteSingleEvent",
+      "uauth": true,
+      "description": "Withdraw (delete, remove) an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The id of the requested event.",
+          "required": true
+        },
+        {
+          "name": "note",
+          "type": "String",
+          "info": "An optional note describing why the event has been withdrawn.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "restoreSingleEvent",
+      "description": "Restore a withdrawn event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The id of the requested event.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "searchEvents",
+      "description": "Search for events.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "keywords",
+          "type": "String",
+          "info": "The search keywords.",
+          "required": false
+        },
+        {
+          "name": "location",
+          "type": "String",
+          "info": "A location name to use in filtering the search results. Locations in the form `San Diego`, `San Diego, TX`, `London, United Kingdom`, and `Calgary, Alberta, Canada` are accepted, as are postal codes (`92122`) and venue IDs (`V0-001-000268633-5`). Common geocoordinate formats (`32.746682, -117.162741`) are also accepted, but the `within` parameter is required in order to set a search radius",
+          "required": false
+        },
+        {
+          "name": "date",
+          "type": "String",
+          "info": "Limit this list of results to a date range, specified by label or exact range. Currently supported labels include: `All`, `Future`, `Past`, `Today`, `Last Week`, `This Week`, `Next week`, and months by name, e.g. `October`. Exact ranges can be specified the form 'YYYYMMDD00-YYYYMMDD00', for example '2012042500-2012042700'; the last two digits of each date in this format are ignored.",
+          "required": false
+        },
+        {
+          "name": "category",
+          "type": "String",
+          "info": "Limit the search results to this category ID. A list of categories may be specified separated by commas. See /categories/list for a list of categories and their IDs.",
+          "required": false
+        },
+        {
+          "name": "exCategory",
+          "type": "String",
+          "info": "Exclude search results from including this category ID.",
+          "required": false
+        },
+        {
+          "name": "within",
+          "type": "String",
+          "info": "If within is set and the \"location\" parameter resolves to a specific geolocation, the search will be restricted to the specified radius. If the \"location\" parameter does not resolve to a specific location, this parameter is ignored.",
+          "required": false
+        },
+        {
+          "name": "units",
+          "type": "String",
+          "info": "One of \"mi\" or \"km\", the units of the \"within\" parameter. Defaults to \"mi\".",
+          "required": false
+        },
+        {
+          "name": "countOnly",
+          "type": "String",
+          "info": "If count_only is set, an abbreviated version of the output will be returned. Only total_items and search_time elements are included in the result.",
+          "required": false
+        },
+        {
+          "name": "sortOrder",
+          "type": "String",
+          "info": "One of 'popularity', 'date', or 'relevance'. Default is 'relevance'.",
+          "required": false
+        },
+        {
+          "name": "sortDirection",
+          "type": "String",
+          "info": "One of 'ascending' or 'descending'. Default varies by sort_order.",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "String",
+          "info": "The desired number of results per page.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "String",
+          "info": "The desired page number",
+          "required": false
+        },
+        {
+          "name": "imageSizes",
+          "type": "String",
+          "info": "A comma separted list of image_sizes desired.",
+          "required": false
+        },
+        {
+          "name": "languages",
+          "type": "String",
+          "info": "Return our guess of each event language. (\"Undetermined\" is a possibility)",
+          "required": false
+        },
+        {
+          "name": "mature",
+          "type": "String",
+          "info": "Sets the level of filtering for events marked as \"mature\" due to keywords in the title or description. One of 'all' (no filtering), 'normal', or 'safe'.",
+          "required": false
+        },
+        {
+          "name": "include",
+          "type": "String",
+          "info": "Indicates that optional sections should be included in the result XML.",
+          "required": false
+        },
+        {
+          "name": "changeMultiDayStart",
+          "type": "String",
+          "info": "If set changes the start_date of long duration events (lasting multiple days) to the beginning of the search date range. It will also give the next occurence of a recurring event after the start range.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "reindexEvent",
+      "description": "Update the search index for an event record.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the event to index.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getICalendarEventsFormat",
+      "description": "Get events in iCalendar format.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "keywords",
+          "type": "String",
+          "info": "The search keywords.",
+          "required": true
+        },
+        {
+          "name": "location",
+          "type": "String",
+          "info": "A location name to use in filtering the search results.",
+          "required": false
+        },
+        {
+          "name": "date",
+          "type": "String",
+          "info": "Limit this list of results to the specified date range.",
+          "required": false
+        },
+        {
+          "name": "within",
+          "type": "String",
+          "info": "Limit this list of results to the specified date range. Date ranges are specified by label. Currently supported labels include: \"All\", \"Future\", \"Past\", \"Today\", \"Last Week\", \"This Week\", \"Next week\", and months by name, e.g. \"October\".",
+          "required": false
+        },
+        {
+          "name": "units",
+          "type": "String",
+          "info": "One of \"mi\" or \"km\", the units of the \"within\" parameter. Defaults to \"mi\".",
+          "required": false
+        },
+        {
+          "name": "sortOrder",
+          "type": "String",
+          "info": "One of 'popularity', 'date', 'title', 'relevance', or 'venue_name'. Default is 'date'.",
+          "required": false
+        },
+        {
+          "name": "sort_direction",
+          "type": "String",
+          "info": "One of 'ascending' or 'descending'. Default varies by sort_order.",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "String",
+          "info": "The desired number of results per page. Default: 50, Maximum: 50.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getRSSEventsFormat",
+      "description": "Get events in RSS format.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "keywords",
+          "type": "String",
+          "info": "The search keywords. ",
+          "required": true
+        },
+        {
+          "name": "location",
+          "type": "String",
+          "info": "A location name to use in filtering the search results.",
+          "required": false
+        },
+        {
+          "name": "date",
+          "type": "String",
+          "info": "Limit this list of results to the specified date range. Date ranges are specified by label.",
+          "required": false
+        },
+        {
+          "name": "within",
+          "type": "Number",
+          "info": "If within is set and the \"location\" parameter resolves to a specific geolocation, the search will be restricted to the specified radius.",
+          "required": false
+        },
+        {
+          "name": "units",
+          "type": "String",
+          "info": "One of \"mi\" or \"km\", the units of the \"within\" parameter. Defaults to \"mi\"",
+          "required": false
+        },
+        {
+          "name": "sortOrder",
+          "type": "String",
+          "info": "One of 'popularity', 'date', 'title', 'relevance', or 'venue_name'. Default is 'date'.",
+          "required": false
+        },
+        {
+          "name": "sortDirection",
+          "type": "String",
+          "info": "One of 'ascending' or 'descending'. Default varies by sort_order.",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "String",
+          "info": "The desired number of results per page.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getEventTags",
+      "description": "List all tags attached to an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the event.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getUsersEventGoing",
+      "description": "List all users going to an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the event.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addEventTags",
+      "uauth": true,
+      "description": "Add tags to an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the event to which these tags are being added.",
+          "required": true
+        },
+        {
+          "name": "tags",
+          "type": "String",
+          "info": "The ID of the event to which these tags are being added.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeEventTags",
+      "uauth": true,
+      "description": "Remove tags from an event. Note: This method was previously called delete but has been renamed remove",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the event from which these tags are being deleted.",
+          "required": true
+        },
+        {
+          "name": "tags",
+          "type": "String",
+          "info": "A space-delimited list of tags. Tags with spaces should be enclosed in quotes (e.g. \"San Diego\").",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addEventComment",
+      "uauth": true,
+      "description": "Add a comment to an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the event to which this comment is being added.",
+          "required": true
+        },
+        {
+          "name": "comment",
+          "type": "String",
+          "info": "The body of the comment message.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "updateEventComment",
+      "uauth": true,
+      "description": "Make changes to an event comment.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "commentId",
+          "type": "String",
+          "info": "The ID of the comment to modify.",
+          "required": true
+        },
+        {
+          "name": "comment",
+          "type": "String",
+          "info": "The new, modified comment to save.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeEventComment",
+      "uauth": true,
+      "description": "Remove a comment from an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "commentId",
+          "type": "String",
+          "info": "The ID of the comment to be deleted.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addEventURL",
+      "description": "Add a URL to an event.",
+      "uauth": true,
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the event to which this link is being added.",
+          "required": true
+        },
+        {
+          "name": "link",
+          "type": "String",
+          "info": "The URL of the link.",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "info": "The title of the link. ",
+          "required": false
+        },
+        {
+          "name": "linkTypeId",
+          "type": "String",
+          "info": "The ID of the link type, as found in this list: 15: Blog, Box Office; 8: Chat; 23: Facebook; 1: Info; 21: Myspace; 3: News; 17: Official Site; 18: Podcast; 4: Review; 5: Sponsor; 6: Tickets; 14: Webcast; 19: Website; 20: Wiki; 16: Other",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeEventURL",
+      "uauth": true,
+      "description": "Remove a URL from an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "linkId",
+          "type": "String",
+          "info": "The ID of the requested event.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addEventImage",
+      "uauth": true,
+      "description": "Add an image to an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The event ID.",
+          "required": true
+        },
+        {
+          "name": "imageId",
+          "type": "String",
+          "info": "The image ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeEventImage",
+      "uauth": true,
+      "description": "Remove an image from an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The event ID.",
+          "required": true
+        },
+        {
+          "name": "imageId",
+          "type": "String",
+          "info": "The image ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addEventPerformer",
+      "uauth": true,
+      "description": "Add a performer to an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The event ID.",
+          "required": true
+        },
+        {
+          "name": "performerId",
+          "type": "String",
+          "info": "The performer ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeEventPerformer",
+      "uauth": true,
+      "description": "Remove a performer from an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The event ID.",
+          "required": true
+        },
+        {
+          "name": "performerId",
+          "type": "String",
+          "info": "The performer ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addEventProperty",
+      "uauth": true,
+      "description": "Add a property to an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The event ID.",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "The property name.",
+          "required": true
+        },
+        {
+          "name": "value",
+          "type": "String",
+          "info": "The property value.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getEventsProperties",
+      "uauth": true,
+      "description": "List properties for an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the event.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeEventProperty",
+      "uauth": true,
+      "description": "Remove a property from an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The event ID.",
+          "required": true
+        },
+        {
+          "name": "propertyId",
+          "type": "String",
+          "info": "The ID of the property to remove",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "The name of the property to remove. NOTE: if name is specified, any property with this name will be removed from this event.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addEventCategory",
+      "uauth": true,
+      "description": "Add a category to an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The event ID.",
+          "required": true
+        },
+        {
+          "name": "categoryId",
+          "type": "String",
+          "info": "The category ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeEventCategory",
+      "uauth": true,
+      "description": "Remove a category from an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The event ID.",
+          "required": true
+        },
+        {
+          "name": "categoryId",
+          "type": "String",
+          "info": "The category ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "resolveDatesFromDateString",
+      "description": "Resolve start and end dates from a date string.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "when",
+          "type": "String",
+          "info": "A string containing a date and optional time(s).",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "createVenue",
+      "description": "Add a new venue record.",
+      "uauth": true,
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "The displayed name for this venue.",
+          "required": true
+        },
+        {
+          "name": "address",
+          "type": "String",
+          "info": "The street address of the venue. (",
+          "required": false
+        },
+        {
+          "name": "city",
+          "type": "String",
+          "info": "The city name.",
+          "required": false
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "The name of the region (state, province, county) ",
+          "required": false
+        },
+        {
+          "name": "postalCode",
+          "type": "String",
+          "info": "The postal code or ZIP code.",
+          "required": false
+        },
+        {
+          "name": "country",
+          "type": "String",
+          "info": "The name of the country.",
+          "required": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "info": "The venue description.",
+          "required": false
+        },
+        {
+          "name": "privacy",
+          "type": "String",
+          "info": "The privacy setting for this venue. (1 = public, 2 = private, 3 = semi-private)",
+          "required": false
+        },
+        {
+          "name": "venueType",
+          "type": "String",
+          "info": "The type of venue (e.g. Cinema, Arena).",
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "A URI link to further information about this venue.",
+          "required": false
+        },
+        {
+          "name": "urlType",
+          "type": "String",
+          "info": "",
+          "required": false
+        },
+        {
+          "name": "parentId",
+          "type": "String",
+          "info": "The ID of this venue's parent venue.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleVenue",
+      "description": "Get a venue record.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The id of the requested venue.",
+          "required": true
+        },
+        {
+          "name": "mature",
+          "type": "String",
+          "info": "Sets the level of filtering for events marked as \"mature\" due to keywords in the title or description. One of 'all' (no filtering), 'normal', or 'safe'.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "updateSingleVenue",
+      "uauth": true,
+      "description": "Make changes to a venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The venue ID to modify.",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "The displayed name for this venue.",
+          "required": false
+        },
+        {
+          "name": "address",
+          "type": "String",
+          "info": "The street address of the venue. (",
+          "required": false
+        },
+        {
+          "name": "city",
+          "type": "String",
+          "info": "The city name.",
+          "required": false
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "The name of the region (state, province, county) ",
+          "required": false
+        },
+        {
+          "name": "postalCode",
+          "type": "String",
+          "info": "The postal code or ZIP code.",
+          "required": false
+        },
+        {
+          "name": "country",
+          "type": "String",
+          "info": "The name of the country.",
+          "required": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "info": "The venue description.",
+          "required": false
+        },
+        {
+          "name": "privacy",
+          "type": "String",
+          "info": "The privacy setting for this venue. (1 = public, 2 = private, 3 = semi-private)",
+          "required": false
+        },
+        {
+          "name": "venueType",
+          "type": "String",
+          "info": "The type of venue (e.g. Cinema, Arena).",
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "A URI link to further information about this venue.",
+          "required": false
+        },
+        {
+          "name": "urlType",
+          "type": "String",
+          "info": "",
+          "required": false
+        },
+        {
+          "name": "parentId",
+          "type": "String",
+          "info": "The ID of this venue's parent venue.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "deleteSingleVenue",
+      "uauth": true,
+      "description": "Withdraw (delete, remove) a venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The id of the requested venue.",
+          "required": true
+        },
+        {
+          "name": "note",
+          "type": "String",
+          "info": "An optional note describing why the venue has been withdrawn.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "restoreSingleVenue",
+      "uauth": true,
+      "description": "Restore a withdrawn venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The id of the requested venue.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "searchVenues",
+      "description": "Search for venues.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "keywords",
+          "type": "String",
+          "info": "The search keywords.",
+          "required": true
+        },
+        {
+          "name": "location",
+          "type": "String",
+          "info": "A location name to use in filtering the search results. Locations in the form \"San Diego\", \"San Diego, TX\", \"London, United Kingdom\", and \"Calgary, Alberta, Canada\" are accepted.",
+          "required": false
+        },
+        {
+          "name": "countOnly",
+          "type": "String",
+          "info": "If count_only is set, an abbreviated version of the output will be returned. Only total_items and search_time elements are included in the result.",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "String",
+          "info": "The desired number of results per page.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "String",
+          "info": "The desired page number.",
+          "required": false
+        },
+        {
+          "name": "within",
+          "type": "Number",
+          "info": "If within is set and the location parameter resolves to a specific geolocation, the search will be restricted to the specified radius. ",
+          "required": false
+        },
+        {
+          "name": "units",
+          "type": "String",
+          "info": "One of \"mi\" or \"km\", the units of the \"within\" parameter. Defaults to \"mi\".",
+          "required": false
+        },
+        {
+          "name": "sort_order",
+          "type": "String",
+          "info": "One of 'popularity', 'relevance', or 'venue_name'. Default is 'relevance'.",
+          "required": false
+        },
+        {
+          "name": "sortDirection",
+          "type": "String",
+          "info": "One of 'ascending' or 'descending'. Default varies by sort_order. ",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getVenueTags",
+      "description": "List all tags attached to an venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the venue.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addVenueTags",
+      "uauth": true,
+      "description": "Adds a new tag to an venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "tags",
+          "type": "String",
+          "info": "A space-delimited list of tags. Tags with spaces should be enclosed in quotes",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the venue to which these tags are being added.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "deleteVenueTags",
+      "uauth": true,
+      "description": "Remove tags from an venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the venue from which these tags are being deleted.",
+          "required": true
+        },
+        {
+          "name": "tags",
+          "type": "String",
+          "info": "A space-delimited list of tags. Tags with spaces should be enclosed in quotes (e.g. \"San Diego\").",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getICalendarVenueFormat",
+      "description": "Get events at a venue in iCalendar format.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The id of the venue to use as the feed source.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getRSSVenueFormat",
+      "description": "Get events at a venue in RSS format.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The id of the venue to use as the feed source.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addVenueComment",
+      "uauth": true,
+      "description": "Add a comment to a venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the venue to which this comment is being added.",
+          "required": true
+        },
+        {
+          "name": "comment",
+          "type": "String",
+          "info": "The body of the comment message.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "updateVenueComment",
+      "uauth": true,
+      "description": "Make changes to a venue comment.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "commentId",
+          "type": "String",
+          "info": "The ID of the comment to modify.",
+          "required": true
+        },
+        {
+          "name": "comment",
+          "type": "String",
+          "info": "The new, modified comment to save.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeVenueComment",
+      "uauth": true,
+      "description": "Remove a comment from a venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "commentId",
+          "type": "String",
+          "info": "The ID of the comment to be deleted.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addVenueURL",
+      "uauth": true,
+      "description": "Add a URL to a venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the venue to which this link is being added.",
+          "required": true
+        },
+        {
+          "name": "link",
+          "type": "String",
+          "info": "The URL of the link.",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "info": "The title of the link.",
+          "required": false
+        },
+        {
+          "name": "linkTypeId",
+          "type": "String",
+          "info": "The ID of the link type, as found in this list: 15: Blog, Box Office; 8: Chat; 23: Facebook; 1: Info; 21: Myspace; 3: News; 17: Official Site; 18: Podcast; 4: Review; 5: Sponsor; 6: Tickets; 14: Webcast; 19: Website; 20: Wiki; 16: Other",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeVenueURL",
+      "uauth": true,
+      "description": "Remove a URL from an event.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "linkId",
+          "type": "String",
+          "info": "The ID of the link to be deleted.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addVenueProperty",
+      "uauth": true,
+      "description": "Add a property to an venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The venue ID.",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "The property name.",
+          "required": true
+        },
+        {
+          "name": "value",
+          "type": "String",
+          "info": "The property value.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getVenueProperties",
+      "description": "List properties for an venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the venue.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeVenueProperty",
+      "uauth": true,
+      "description": "Remove a property from an venue.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The venue ID.",
+          "required": true
+        },
+        {
+          "name": "propertyId",
+          "type": "String",
+          "info": "The ID of the property to remove",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "The name of the property to remove. NOTE: if name is specified, any property with this name will be removed from this venue.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "resolveVenueFromLocationString",
+      "uauth": true,
+      "description": "Resolve a venue from a location string.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "location",
+          "type": "String",
+          "info": "A venue name and/or city.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getUserCalendars",
+      "description": "List a user's calendars.",
+      "auth": true,
+      "uauth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "owner",
+          "type": "String",
+          "info": "The Eventful username of the calendars' owner. (optional, defaults to authenticated user)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleCalendar",
+      "description": "Get the settings for a user's calendar.",
+      "auth": true,
+      "uauth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The calendar ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getUser",
+      "description": "Get a user record.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the requested user.",
+          "required": true
+        },
+        {
+          "name": "listCounts",
+          "type": "String",
+          "info": "List counts of user activity. Set to 1 to display this data.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "searchesUsers",
+      "description": "Searches for users.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "keywords",
+          "type": "String",
+          "info": "The search keywords",
+          "required": true
+        },
+        {
+          "name": "sortOrder",
+          "type": "String",
+          "info": "Orders sorting of results by \"relevance\" (default), \"username\", \"event_count\", \"venue_count\", or \"calendar_count\".",
+          "required": false
+        },
+        {
+          "name": "countOnly",
+          "type": "String",
+          "info": "If count_only is set, an abbreviated version of the output will be returned. Only total_items and search_time elements are included in the result.",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "String",
+          "info": "The desired number of results per \"page\".",
+          "required": false
+        },
+        {
+          "name": "page_number",
+          "type": "String",
+          "info": "The desired \"page\" number.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getUserGroups",
+      "description": "List the groups of which a user is a member.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The user ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getUserRecentlyAddedVenues",
+      "description": "List a user's recently added venues.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The user ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addLocaleToUserLocations",
+      "description": "Add a locale to a user's saved locations.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The user ID.",
+          "required": true
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "The locale to add to the user.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getUserLocations",
+      "description": "List a user's saved locations.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The user's ID. If not specified, the authenticated user by default.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "deleteLocaleFromUserLocations",
+      "description": "Delete a locale from a user's saved locations.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The user id from which to delete the locale.",
+          "required": true
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "The name of the locale to delete.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "marksUserAsGoingToEvent",
+      "uauth": true,
+      "description": "Removes a user from an event's \"I'm going\" list.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "eventId",
+          "type": "String",
+          "info": "The event ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeUserFromGoingToEvent",
+      "uauth": true,
+      "description": "Removes a user from an event's \"I'm going\" list.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "eventId",
+          "type": "String",
+          "info": "The event ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addSingleImage",
+      "description": "Add an image to a performer.",
+      "auth": true,
+      "uauth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "image",
+          "type": "File",
+          "info": "File upload URL from which to retrieve the image file.",
+          "required": true
+        },
+        {
+          "name": "caption",
+          "type": "String",
+          "info": "A caption for this image.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "createSinglePerformer",
+      "description": "Add an image to a performer.",
+      "uauth": true,
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "The name of this performer.",
+          "required": true
+        },
+        {
+          "name": "shortBio",
+          "type": "String",
+          "info": "A short biography of this performer.",
+          "required": false
+        },
+        {
+          "name": "longBio",
+          "type": "String",
+          "info": "A detailed biography of this performer.",
+          "required": false
+        },
+        {
+          "name": "tags",
+          "type": "String",
+          "info": "A space-delimited list of tags.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getSinglePerformer",
+      "description": "Get the details for a performer.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the requested performer.",
+          "required": true
+        },
+        {
+          "name": "showEvents",
+          "type": "Boolean",
+          "info": "If true, include the events list. (see below)",
+          "required": true
+        },
+        {
+          "name": "image_sizes",
+          "type": "String",
+          "info": "A comma separted list of image_sizes desired.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "updateSinglePerformer",
+      "uauth": true,
+      "description": "Modify a performer.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the performer object to modify.",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "The name of this performer.",
+          "required": false
+        },
+        {
+          "name": "shortBio",
+          "type": "String",
+          "info": "A short biography of this performer.",
+          "required": true
+        },
+        {
+          "name": "longBio",
+          "type": "String",
+          "info": "A detailed biography of this performer.",
+          "required": false
+        },
+        {
+          "name": "tags",
+          "type": "String",
+          "info": "A space-delimited list of tags.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "searchPerformers",
+      "description": "Search for performers.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "keywords",
+          "type": "String",
+          "info": "The search keywords.",
+          "required": true
+        },
+        {
+          "name": "countOnly",
+          "type": "String",
+          "info": "If count_only is set, an abbreviated version of the output will be returned. Only total_items and search_time elements are included in the result.",
+          "required": false
+        },
+        {
+          "name": "sortOrder",
+          "type": "String",
+          "info": "One of 'relevance', 'name', 'event_count', 'demand_member_count', or 'created'",
+          "required": false
+        },
+        {
+          "name": "sortDirection",
+          "type": "String",
+          "info": "One of 'ascending' or 'descending'. Default is 'ascending'.",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "String",
+          "info": "The desired number of results per page. Maximum 100, defaults to 20",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "String",
+          "info": "The desired page number",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "deleteSinglePerformer",
+      "uauth": true,
+      "description": "Delete a performer.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The performer ID to withdraw.",
+          "required": true
+        },
+        {
+          "name": "note",
+          "type": "String",
+          "info": "A short reason why this performer was withdrawn.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addLinksToPerformer",
+      "uauth": true,
+      "description": "Add links to an performer.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The performer ID.",
+          "required": true
+        },
+        {
+          "name": "link",
+          "type": "String",
+          "info": "The link url being added.",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "info": "Description of the link being added.",
+          "required": false
+        },
+        {
+          "name": "linkTypeId",
+          "type": "String",
+          "info": "The type of link being added. Corresponds to one of the follow values: 1 Info; 2 Office; 3 News; 4 Review; 5 Sponsor; 6 Tickets; 8 Chat; 14 Webcast; 15 Blog; 16 Other; 17 Official Site; 18 Podcast; 19 Website;; 20 Wiki; 21 MySpace; 22 Ringtone; 23 Facebook; 24 Official Tickets; 25 Twitter",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeLinksFromPerformer",
+      "uauth": true,
+      "description": "Remove links from an performer.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The performer ID.",
+          "required": true
+        },
+        {
+          "name": "linkId",
+          "type": "Number",
+          "info": "The link_id of the link being removed.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "addImageToPerformer",
+      "uauth": true,
+      "description": "Add an image to a performer.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The performer ID.",
+          "required": true
+        },
+        {
+          "name": "imageId",
+          "type": "String",
+          "info": "The image ID",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "removeImageFromPerformer",
+      "description": "Remove an image from a performer.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The performer ID.",
+          "required": true
+        },
+        {
+          "name": "imageId",
+          "type": "String",
+          "info": "The image ID.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getPerformerEvents",
+      "description": "Get all events for a performer.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the performer.",
+          "required": true
+        },
+        {
+          "name": "pageSize",
+          "type": "String",
+          "info": "The page_size (number of events) to be returned",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "String",
+          "info": "The page number of events to be returned (defaults to 1).",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getPerformersBasedOnIds",
+      "description": "Get all performers based on external ids (facebook, etc).",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "source",
+          "type": "String",
+          "info": "The source of the external ids (facebook ids should be fb_uid) for other providers please contact eventful to see if we support them.",
+          "required": true
+        },
+        {
+          "name": "ids",
+          "type": "Number",
+          "info": "Comma separated list of ids to map to eventul performer ids.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getSingleDemand",
+      "description": "Get the details for a demand.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "info": "The ID of the requested demand.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "searchDemands",
+      "description": "Search for demands.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "keywords",
+          "type": "String",
+          "info": "The search keywords.",
+          "required": false
+        },
+        {
+          "name": "location",
+          "type": "String",
+          "info": "A location name to use in filtering the search results.",
+          "required": false
+        },
+        {
+          "name": "countOnly",
+          "type": "String",
+          "info": "If count_only is set, an abbreviated version of the output will be returned. Only total_items and search_time elements are included in the result.",
+          "required": false
+        },
+        {
+          "name": "sortOrder",
+          "type": "String",
+          "info": "One of 'relevance', 'name', 'category', 'member_count', 'performer', or 'created'",
+          "required": false
+        },
+        {
+          "name": "sortDirection",
+          "type": "String",
+          "info": "One of 'ascending' or 'descending'. Default is 'ascending'.",
+          "required": false
+        },
+        {
+          "name": "pageSize",
+          "type": "String",
+          "info": "The desired number of results per page. Maximum 100, defaults to 20.",
+          "required": false
+        },
+        {
+          "name": "pageNumber",
+          "type": "String",
+          "info": "The desired page number.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    },
+    {
+      "name": "getCategories",
+      "description": "List the available categories.",
+      "auth": true,
+      "args": [
+        {
+          "name": "appKey",
+          "type": "credentials",
+          "info": "Eventful app key.",
+          "required": true
+        },
+        {
+          "name": "consumerKey",
+          "type": "credentials",
+          "info": "Eventful consumer key.",
+          "required": true
+        },
+        {
+          "name": "consumerSecret",
+          "type": "credentials",
+          "info": "Eventful consumer secret.",
+          "required": true
+        },
+        {
+          "name": "oauthToken",
+          "type": "String",
+          "info": "OAuth Access Token from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "oauthTokenSecret",
+          "type": "String",
+          "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": false
+        },
+        {
+          "name": "subcategories",
+          "type": "String",
+          "info": "Optional - set to 1 to get subcategory information back.",
+          "required": false
+        },
+        {
+          "name": "aliases",
+          "type": "String",
+          "info": "Optional - set to 1 to get category aliases back in the results.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "success",
+          "info": "Success"
+        },
+        {
+          "name": "error",
+          "info": "Error"
+        }
+      ]
+    }
+  ]
+}

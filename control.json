@@ -1,0 +1,1057 @@
+{
+    "getAccessToken": {
+        "url": "http://api.eventful.com/rest",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|": ""
+        }
+    },
+    "createEvent": {
+        "url": "http://api.eventful.com/rest/events/new",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|title": "$title",
+            "String|startTime": "$start_time",
+            "String|stopTime": "stop_time",
+            "String|tzOlsonPath": "tz_olson_path",
+            "Boolean|allDay": "all_day",
+            "String|description": "description",
+            "String|privacy": "privacy",
+            "String|tags": "tags",
+            "Boolean|free": "free",
+            "String|price": "price",
+            "Number|venueId": "venue_id",
+            "String|parentId": "parent_id"
+        }
+    },
+    "getSingleEvent": {
+        "url": "http://api.eventful.com/rest/events/get",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id",
+            "String|imageSizes": "image_sizes"
+        }
+    },
+    "updateSingleEvent": {
+        "url": "http://api.eventful.com/rest/events/modify",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|title": "title",
+            "String|startTime": "start_time",
+            "String|stopTime": "stop_time",
+            "String|tzOlsonPath": "tz_olson_path",
+            "Boolean|allDay": "all_day",
+            "String|description": "description",
+            "String|privacy": "privacy",
+            "String|tags": "tags",
+            "Boolean|free": "free",
+            "String|price": "price",
+            "Number|venueId": "venue_id",
+            "String|parentId": "parent_id"
+        }
+    },
+    "deleteSingleEvent": {
+        "url": "http://api.eventful.com/rest/events/withdraw",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|note": "note"
+        }
+    },
+    "restoreSingleEvent": {
+        "url": "http://api.eventful.com/rest/events/restore",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "searchEvents": {
+        "url": "http://api.eventful.com/rest/events/search",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|keywords": "keywords",
+            "String|location": "location",
+            "String|date": "date",
+            "String|category": "category",
+            "String|exCategory": "ex_category",
+            "String|within": "within",
+            "String|units": "units",
+            "String|countOnly": "count_only",
+            "String|sortOrder": "sort_order",
+            "String|sortDirection": "sort_direction",
+            "String|pageSize": "page_size",
+            "String|pageNumber": "page_number",
+            "String|imageSizes": "image_sizes",
+            "String|languages": "languages",
+            "String|mature": "mature",
+            "String|include": "include",
+            "String|changeMultiDayStart": "changeMultiDayStart"
+        }
+    },
+    "reindexEvent": {
+        "url": "http://api.eventful.com/rest/events/reindex",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "getICalendarEventsFormat": {
+        "url": "http://api.eventful.com/rest/events/ical",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|keywords": "$keywords",
+            "String|location": "location",
+            "String|date": "date",
+            "String|within": "within",
+            "String|units": "units",
+            "String|sortOrder": "sort_order",
+            "String|sort_direction": "sortDirection",
+            "String|pageSize": "page_size"
+        }
+    },
+    "getRSSEventsFormat": {
+        "url": "http://api.eventful.com/rest/events/rss",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|keywords": "$keywords",
+            "String|location": "location",
+            "String|date": "date",
+            "Number|within": "within",
+            "String|units": "units",
+            "String|sortOrder": "sort_order",
+            "String|sortDirection": "sort_direction",
+            "String|pageSize": "page_size"
+        }
+    },
+    "getEventTags": {
+        "url": "http://api.eventful.com/rest/events/tags/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "getUsersEventGoing": {
+        "url": "http://api.eventful.com/rest/events/going/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "addEventTags": {
+        "url": "http://api.eventful.com/rest/events/tags/new",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|tags": "$tags"
+        }
+    },
+    "removeEventTags": {
+        "url": "http://api.eventful.com/rest/events/tags/remove",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|tags": "tags"
+        }
+    },
+    "addEventComment": {
+        "url": "http://api.eventful.com/rest/events/comments/new",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|comment": "$comment"
+        }
+    },
+    "updateEventComment": {
+        "url": "http://api.eventful.com/rest/events/comments/modify",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|commentId": "$comment_id",
+            "String|comment": "$comment"
+        }
+    },
+    "removeEventComment": {
+        "url": "http://api.eventful.com/rest/events/comments/delete",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|commentId": "$comment_id"
+        }
+    },
+    "addEventURL": {
+        "url": "http://api.eventful.com/rest/events/links/new",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|link": "$link",
+            "String|description": "description",
+            "String|linkTypeId": "$link_type_id"
+        }
+    },
+    "removeEventURL": {
+        "url": "http://api.eventful.com/rest/events/links/delete",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|linkId": "$link_id"
+        }
+    },
+    "addEventImage": {
+        "url": "http://api.eventful.com/rest/events/images/add",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|imageId": "$image_id"
+        }
+    },
+    "removeEventImage": {
+        "url": "http://api.eventful.com/rest/events/images/remove",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|imageId": "$image_id"
+        }
+    },
+    "addEventPerformer": {
+        "url": "http://api.eventful.com/rest/events/performers/add",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|performerId": "$performer_id"
+        }
+    },
+    "removeEventPerformer": {
+        "url": "http://api.eventful.com/rest/events/performers/remove",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|performerId": "$performer_id"
+        }
+    },
+    "addEventProperty": {
+        "url": "http://api.eventful.com/rest/events/properties/add",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|name": "$name",
+            "String|value": "$value"
+        }
+    },
+    "getEventsProperties": {
+        "url": "http://api.eventful.com/rest/events/properties/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "removeEventProperty": {
+        "url": "http://api.eventful.com/rest/events/properties/remove",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|propertyId": "$property_id",
+            "String|name": "$name"
+        }
+    },
+    "addEventCategory": {
+        "url": "http://api.eventful.com/rest/events/categories/add",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|categoryId": "$category_id"
+        }
+    },
+    "removeEventCategory": {
+        "url": "http://api.eventful.com/rest/events/categories/remove",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|categoryId": "$category_id"
+        }
+    },
+    "resolveDatesFromDateString": {
+        "url": "http://api.eventful.com/rest/events/dates/resolve",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|when": "$when"
+        }
+    },
+    "createVenue": {
+        "url": "http://api.eventful.com/rest/venues/new",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|name": "$name",
+            "String|address": "address",
+            "String|city": "city",
+            "String|region": "region",
+            "String|postalCode": "postal_code",
+            "String|country": "country",
+            "String|description": "description",
+            "String|privacy": "privacy",
+            "String|venueType": "venue_type",
+            "String|url": "url",
+            "String|urlType": "url_type",
+            "String|parentId": "parent_id"
+        }
+    },
+    "getSingleVenue": {
+        "url": "http://api.eventful.com/rest/venues/get",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id",
+            "String|mature": "mature"
+        }
+    },
+    "updateSingleVenue": {
+        "url": "http://api.eventful.com/rest/venues/modify",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|name": "name",
+            "String|address": "address",
+            "String|city": "city",
+            "String|region": "region",
+            "String|postalCode": "postal_code",
+            "String|country": "country",
+            "String|description": "description",
+            "String|privacy": "privacy",
+            "String|venueType": "venue_type",
+            "String|url": "url",
+            "String|urlType": "url_type",
+            "String|parentId": "parent_id"
+        }
+    },
+    "deleteSingleVenue": {
+        "url": "http://api.eventful.com/rest/venues/withdraw",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|note": "note"
+        }
+    },
+    "restoreSingleVenue": {
+        "url": "http://api.eventful.com/rest/venues/restore",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "searchVenues": {
+        "url": "http://api.eventful.com/rest/venues/search",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|keywords": "$keywords",
+            "String|location": "location",
+            "String|countOnly": "count_only",
+            "String|pageSize": "page_size",
+            "String|pageNumber": "page_number",
+            "Number|within": "within",
+            "String|units": "units",
+            "String|sort_order": "sortOrder",
+            "String|sortDirection": "sort_direction"
+        }
+    },
+    "getVenueTags": {
+        "url": "http://api.eventful.com/rest/venues/tags/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "addVenueTags": {
+        "url": "http://api.eventful.com/rest/venues/tags/new",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|tags": "$tags",
+            "String|id": "$id"
+        }
+    },
+    "deleteVenueTags": {
+        "url": "http://api.eventful.com/rest/venues/tags/delete",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|tags": "$tags"
+        }
+    },
+    "getICalendarVenueFormat": {
+        "url": "http://api.eventful.com/rest/venues/ical",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "getRSSVenueFormat": {
+        "url": "http://api.eventful.com/rest/venues/rss",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "addVenueComment": {
+        "url": "http://api.eventful.com/rest/venues/comments/new",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|comment": "$comment"
+        }
+    },
+    "updateVenueComment": {
+        "url": "http://api.eventful.com/rest/venues/comments/modify",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|commentId": "$comment_id",
+            "String|comment": "$comment"
+        }
+    },
+    "removeVenueComment": {
+        "url": "http://api.eventful.com/rest/venues/comments/delete",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|commentId": "$comment_id"
+        }
+    },
+    "addVenueURL": {
+        "url": "http://api.eventful.com/rest/venues/links/new",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|link": "$link",
+            "String|description": "description",
+            "String|linkTypeId": "$link_type_id"
+        }
+    },
+    "removeVenueURL": {
+        "url": "http://api.eventful.com/rest/venues/links/delete",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|linkId": "$link_id"
+        }
+    },
+    "addVenueProperty": {
+        "url": "http://api.eventful.com/rest/venues/properties/add",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|name": "$name",
+            "String|value": "$value"
+        }
+    },
+    "getVenueProperties": {
+        "url": "http://api.eventful.com/rest/venues/properties/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "removeVenueProperty": {
+        "url": "http://api.eventful.com/rest/venues/properties/remove",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|propertyId": "$property_id",
+            "String|name": "$name"
+        }
+    },
+    "resolveVenueFromLocationString": {
+        "url": "http://api.eventful.com/rest/venues/resolve",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|location": "$location"
+        }
+    },
+    "getUserCalendars": {
+        "url": "http://api.eventful.com/rest/users/calendars/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|owner": "owner"
+        }
+    },
+    "getSingleCalendar": {
+        "url": "http://api.eventful.com/rest/users/calendars/get",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "getUser": {
+        "url": "http://api.eventful.com/rest/users/get",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id",
+            "String|listCounts": "list-counts"
+        }
+    },
+    "searchesUsers": {
+        "url": "http://api.eventful.com/rest/users/search",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|keywords": "$keywords",
+            "String|sortOrder": "sort_order",
+            "String|countOnly": "count_only",
+            "String|pageSize": "page_size",
+            "String|page_number": "pageNumber"
+        }
+    },
+    "getUserGroups": {
+        "url": "http://api.eventful.com/rest/users/groups/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "getUserRecentlyAddedVenues": {
+        "url": "http://api.eventful.com/rest/users/venue/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "addLocaleToUserLocations": {
+        "url": "http://api.eventful.com/rest/users/locales/add",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id",
+            "String|locale": "$locale"
+        }
+    },
+    "getUserLocations": {
+        "url": "http://api.eventful.com/rest/users/locales/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "deleteLocaleFromUserLocations": {
+        "url": "http://api.eventful.com/rest/users/locales/delete",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id",
+            "String|locale": "locale"
+        }
+    },
+    "marksUserAsGoingToEvent": {
+        "url": "http://api.eventful.com/rest/users/going/remove",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|eventId": "$event_id"
+        }
+    },
+    "removeUserFromGoingToEvent": {
+        "url": "http://api.eventful.com/rest/users/going/remove",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|eventId": "$event_id"
+        }
+    },
+    "addSingleImage": {
+        "url": "http://api.eventful.com/rest/performers/images/add",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "File|image": "$image_url",
+            "String|caption": "caption"
+        }
+    },
+    "createSinglePerformer": {
+        "url": "http://api.eventful.com/rest/performers/images/add",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|name": "$name",
+            "String|shortBio": "short_bio",
+            "String|longBio": "long_bio",
+            "String|tags": "tags"
+        }
+    },
+    "getSinglePerformer": {
+        "url": "http://api.eventful.com/rest/performers/get",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id",
+            "Boolean|showEvents": "$show_events",
+            "String|image_sizes": "$imageSizes"
+        }
+    },
+    "updateSinglePerformer": {
+        "url": "http://api.eventful.com/rest/performers/modify",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|name": "name",
+            "String|shortBio": "$short_bio",
+            "String|longBio": "long_bio",
+            "String|tags": "tags"
+        }
+    },
+    "searchPerformers": {
+        "url": "http://api.eventful.com/rest/performers/search",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|keywords": "$keywords",
+            "String|countOnly": "count_only",
+            "String|sortOrder": "sort_order",
+            "String|sortDirection": "sort_direction",
+            "String|pageSize": "page_size",
+            "String|pageNumber": "page_number"
+        }
+    },
+    "deleteSinglePerformer": {
+        "url": "http://api.eventful.com/rest/performers/withdraw",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|note": "$note"
+        }
+    },
+    "addLinksToPerformer": {
+        "url": "http://api.eventful.com/rest/performers/links/add",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|link": "$link",
+            "String|description": "description",
+            "String|linkTypeId": "$linkTypeId"
+        }
+    },
+    "removeLinksFromPerformer": {
+        "url": "http://api.eventful.com/rest/performers/links/remove",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "Number|linkId": "$link_id"
+        }
+    },
+    "addImageToPerformer": {
+        "url": "http://api.eventful.com/rest/performers/images/add",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "$oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|id": "$id",
+            "String|imageId": "image_id"
+        }
+    },
+    "removeImageFromPerformer": {
+        "url": "http://api.eventful.com/rest/performers/images/remove",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id",
+            "String|imageId": "$image_id"
+        }
+    },
+    "getPerformerEvents": {
+        "url": "http://api.eventful.com/rest/performers/events/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id",
+            "String|pageSize": "page_size",
+            "String|pageNumber": "page_number"
+        }
+    },
+    "getPerformersBasedOnIds": {
+        "url": "http://api.eventful.com/rest/performers/xids/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|source": "$source",
+            "Number|ids": "$ids"
+        }
+    },
+    "getSingleDemand": {
+        "url": "http://api.eventful.com/rest/demands/get",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|id": "$id"
+        }
+    },
+    "searchDemands": {
+        "url": "http://api.eventful.com/rest/demands/search",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|keywords": "keywords",
+            "String|location": "location",
+            "String|countOnly": "count_only",
+            "String|sortOrder": "sort_order",
+            "String|sortDirection": "sort_direction",
+            "String|pageSize": "page_size",
+            "String|pageNumber": "page_number"
+        }
+    },
+    "getCategories": {
+        "url": "http://api.eventful.com/rest/categories/list",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "app_key",
+            "credentials|consumerKey": "$oauth_consumer_key",
+            "credentials|consumerSecret": "$!consumerSecret",
+            "String|oauthToken": "oauth_token",
+            "String|oauthTokenSecret": "!tokenSecret",
+            "String|subcategories": "subcategories",
+            "String|aliases": "aliases"
+        }
+    }
+}
