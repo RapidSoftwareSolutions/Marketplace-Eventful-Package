@@ -46,7 +46,6 @@ for(let func in control) {
         };
 
         try {
-            console.log(args)
             for(let arg in args) {
                 let argarr = arg.split('|');
                 opts[args[arg] + '|' + argarr[0]] = req.body.args[argarr[1]];
