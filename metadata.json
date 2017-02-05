@@ -4388,7 +4388,7 @@
           "name": "note",
           "type": "String",
           "info": "A short reason why this performer was withdrawn.",
-          "required": true
+          "required": false
         }
       ],
       "callbacks": [

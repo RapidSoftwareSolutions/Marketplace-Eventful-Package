@@ -915,7 +915,7 @@
             "String|oauthToken": "$!oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
             "String|id": "$id",
-            "String|note": "$note"
+            "String|note": "note"
         }
     },
     "addLinksToPerformer": {
