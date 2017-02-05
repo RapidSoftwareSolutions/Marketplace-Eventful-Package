@@ -46,6 +46,7 @@ for(let func in control) {
         };
 
         try {
+            console.log(args)
             for(let arg in args) {
                 let argarr = arg.split('|');
                 opts[args[arg] + '|' + argarr[0]] = req.body.args[argarr[1]];
@@ -67,6 +68,7 @@ for(let func in control) {
             r.callback            = 'success';
             r.contextWrites['to'] = format;
         } catch(e) {
+            console.log(e);
             r.callback            = 'error';
             r.contextWrites['to'] = e;
         }
@@ -88,9 +90,8 @@ for(let route in API) {
             r.callback            = 'success';
             r.contextWrites['to'] = lib.success(response);
         } catch(e) {
-            console.log(e);
             r.callback            = 'error';
-            r.contextWrites['to'] = lib.error(e);
+            r.contextWrites['to'] = e;
 
         }
         res.status(200).send(r);

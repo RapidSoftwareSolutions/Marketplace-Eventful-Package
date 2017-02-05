@@ -182,7 +182,7 @@
           "name": "venueId",
           "type": "Number",
           "info": "The ID of the venue where this event occurs.",
-          "required": false
+          "required": true
         },
         {
           "name": "parentId",

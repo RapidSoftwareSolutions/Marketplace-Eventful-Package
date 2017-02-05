@@ -18,7 +18,7 @@
             "String|tags": "tags",
             "Boolean|free": "free",
             "String|price": "price",
-            "Number|venueId": "venue_id",
+            "Number|venueId": "$venue_id",
             "String|parentId": "parent_id"
         }
     },
@@ -139,7 +139,7 @@
             "String|within": "within",
             "String|units": "units",
             "String|sortOrder": "sort_order",
-            "String|sort_direction": "sortDirection",
+            "String|sortDirection": "sort_direction",
             "String|pageSize": "page_size"
         }
     },
@@ -418,10 +418,10 @@
             "String|oauthTokenSecret": "$!tokenSecret",
             "String|name": "$name",
             "String|address": "address",
-            "String|city": "city",
-            "String|region": "region",
+            "String|city": "$city",
+            "String|region": "$region",
             "String|postalCode": "postal_code",
-            "String|country": "country",
+            "String|country": "$country",
             "String|description": "description",
             "String|privacy": "privacy",
             "String|venueType": "venue_type",
