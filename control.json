@@ -869,7 +869,7 @@
             "String|oauthTokenSecret": "!tokenSecret",
             "String|id": "$id",
             "Boolean|showEvents": "$show_events",
-            "String|image_sizes": "$imageSizes"
+            "String|image_sizes": "imageSizes"
         }
     },
     "updateSinglePerformer": {
@@ -930,7 +930,7 @@
             "String|id": "$id",
             "String|link": "$link",
             "String|description": "description",
-            "String|linkTypeId": "$linkTypeId"
+            "String|linkTypeId": "$link_type_id"
         }
     },
     "removeLinksFromPerformer": {

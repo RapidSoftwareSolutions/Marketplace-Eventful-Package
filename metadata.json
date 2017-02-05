@@ -4167,7 +4167,7 @@
           "name": "image_sizes",
           "type": "String",
           "info": "A comma separted list of image_sizes desired.",
-          "required": true
+          "required": false
         }
       ],
       "callbacks": [
