@@ -62,11 +62,12 @@ for(let func in control) {
                 tokenSecret:    req.body.args['oauthTokenSecret']
             }).request(options);
 
-            let format = yield lib.parse(result);
+            let format = yield lib.parse(func, result);
 
             r.callback            = 'success';
             r.contextWrites['to'] = format;
         } catch(e) {
+            console.log(e)
             r.callback            = 'error';
             r.contextWrites['to'] = e;
         }
