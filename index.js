@@ -67,7 +67,6 @@ for(let func in control) {
             r.callback            = 'success';
             r.contextWrites['to'] = format;
         } catch(e) {
-            console.log(e);
             r.callback            = 'error';
             r.contextWrites['to'] = e;
         }

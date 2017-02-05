@@ -831,7 +831,7 @@
         }
     },
     "addSingleImage": {
-        "url": "http://api.eventful.com/rest/performers/images/add",
+        "url": "http://api.eventful.com/rest/images/new",
         "method": "GET",
         "args": {
             "credentials|appKey": "$app_key",
@@ -844,7 +844,7 @@
         }
     },
     "createSinglePerformer": {
-        "url": "http://api.eventful.com/rest/performers/images/add",
+        "url": "http://api.eventful.com/rest/performers/new",
         "method": "GET",
         "args": {
             "credentials|appKey": "$app_key",
