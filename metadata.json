@@ -25,7 +25,7 @@
   "blocks": [
     {
       "name": "getAccessToken",
-      "description": "",
+      "description": "Eventful OAuth",
       "auth": true,
       "args": [
         {
@@ -47,28 +47,22 @@
           "required": true
         },
         {
-          "name": "oauthToken",
+          "name": "token",
           "type": "String",
-          "info": "OAuth Access Token from `getAccessToken` method.",
-          "required": false
-        },
-        {
-          "name": "oauthTokenSecret",
-          "type": "String",
-          "info": "OAuth Access Token Secret from `getAccessToken` method.",
-          "required": false
-        },
-        {
-          "name": "",
-          "type": "String",
-          "info": "",
+          "info": "OAuth Token.",
           "required": true
         },
         {
-          "name": "",
+          "name": "tokenSecret",
           "type": "String",
-          "info": "",
-          "required": false
+          "info": "OAuth Token Secret.",
+          "required": true
+        },
+        {
+          "name": "verifier",
+          "type": "String",
+          "info": "OAuth verifier code.",
+          "required": true
         }
       ],
       "callbacks": [
