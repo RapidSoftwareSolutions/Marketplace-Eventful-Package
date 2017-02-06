@@ -3475,7 +3475,7 @@
       ]
     },
     {
-      "name": "searchesUsers",
+      "name": "searchUsers",
       "description": "Searches for users.",
       "auth": true,
       "args": [
