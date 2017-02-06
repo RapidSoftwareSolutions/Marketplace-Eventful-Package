@@ -79,8 +79,8 @@
             "credentials|appKey": "$app_key",
             "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "!oauth_token",
-            "String|oauthTokenSecret": "!tokenSecret",
+            "String|oauthToken": "$!oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
             "String|id": "$id"
         }
     },
@@ -234,6 +234,7 @@
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$!oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
+            "String|eventId": "$id",
             "String|commentId": "$comment_id",
             "String|comment": "$comment"
         }
@@ -247,6 +248,7 @@
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$!oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
+            "String|eventId": "$id",
             "String|commentId": "$comment_id"
         }
     },
@@ -274,6 +276,7 @@
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$!oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
+            "String|eventId": "$id",
             "String|linkId": "$link_id"
         }
     },
@@ -700,7 +703,7 @@
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "$!oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
-            "String|owner": "owner"
+            "String|owner": "$owner"
         }
     },
     "getSingleCalendar": {
@@ -724,7 +727,7 @@
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
-            "String|id": "$id",
+            "String|username": "$id",
             "String|listCounts": "list-counts"
         }
     },
@@ -753,7 +756,7 @@
             "credentials|consumerSecret": "$!consumerSecret",
             "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
-            "String|id": "$id"
+            "String|username": "$id"
         }
     },
     "getUserRecentlyAddedVenues": {
@@ -763,9 +766,9 @@
             "credentials|appKey": "$app_key",
             "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "!oauth_token",
-            "String|oauthTokenSecret": "!tokenSecret",
-            "String|id": "$id"
+            "String|oauthToken": "$!oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|username": "$id"
         }
     },
     "addLocaleToUserLocations": {
@@ -775,9 +778,9 @@
             "credentials|appKey": "$app_key",
             "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "!oauth_token",
-            "String|oauthTokenSecret": "!tokenSecret",
-            "String|id": "$id",
+            "String|oauthToken": "$!oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|username": "$id",
             "String|locale": "$locale"
         }
     },
@@ -788,9 +791,9 @@
             "credentials|appKey": "$app_key",
             "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "!oauth_token",
-            "String|oauthTokenSecret": "!tokenSecret",
-            "String|id": "$id"
+            "String|oauthToken": "$!oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|username": "$id"
         }
     },
     "deleteLocaleFromUserLocations": {
@@ -800,14 +803,14 @@
             "credentials|appKey": "$app_key",
             "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "!oauth_token",
-            "String|oauthTokenSecret": "!tokenSecret",
-            "String|id": "$id",
-            "String|locale": "locale"
+            "String|oauthToken": "$!oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
+            "String|username": "$id",
+            "String|locale": "$locale"
         }
     },
     "marksUserAsGoingToEvent": {
-        "url": "http://api.eventful.com/rest/users/going/remove",
+        "url": "http://api.eventful.com/rest/users/going/add",
         "method": "GET",
         "args": {
             "credentials|appKey": "$app_key",
@@ -956,7 +959,7 @@
             "String|oauthToken": "$!oauth_token",
             "String|oauthTokenSecret": "$!tokenSecret",
             "String|id": "$id",
-            "String|imageId": "image_id"
+            "String|imageId": "$image_id"
         }
     },
     "removeImageFromPerformer": {
@@ -966,8 +969,8 @@
             "credentials|appKey": "$app_key",
             "credentials|consumerKey": "$!oauth_consumer_key",
             "credentials|consumerSecret": "$!consumerSecret",
-            "String|oauthToken": "!oauth_token",
-            "String|oauthTokenSecret": "!tokenSecret",
+            "String|oauthToken": "$!oauth_token",
+            "String|oauthTokenSecret": "$!tokenSecret",
             "String|id": "$id",
             "String|imageId": "$image_id"
         }

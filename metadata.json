@@ -468,13 +468,13 @@
           "name": "oauthToken",
           "type": "String",
           "info": "OAuth Access Token from `getAccessToken` method.",
-          "required": false
+          "required": true
         },
         {
           "name": "oauthTokenSecret",
           "type": "String",
           "info": "OAuth Access Token Secret from `getAccessToken` method.",
-          "required": false
+          "required": true
         },
         {
           "name": "id",
@@ -1209,6 +1209,12 @@
           "required": true
         },
         {
+          "name": "eventId",
+          "type": "String",
+          "info": "Event ID.",
+          "required": true
+        },
+        {
           "name": "commentId",
           "type": "String",
           "info": "The ID of the comment to modify.",
@@ -1266,6 +1272,12 @@
           "name": "oauthTokenSecret",
           "type": "String",
           "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "eventId",
+          "type": "String",
+          "info": "Event ID.",
           "required": true
         },
         {
@@ -1392,6 +1404,12 @@
           "name": "oauthTokenSecret",
           "type": "String",
           "info": "OAuth Access Token Secret from `getAccessToken` method.",
+          "required": true
+        },
+        {
+          "name": "eventId",
+          "type": "String",
+          "info": "Event ID.",
           "required": true
         },
         {
@@ -2811,66 +2829,6 @@
       ]
     },
     {
-      "name": "addVenueComment",
-      "uauth": true,
-      "description": "Add a comment to a venue.",
-      "auth": true,
-      "args": [
-        {
-          "name": "appKey",
-          "type": "credentials",
-          "info": "Eventful app key.",
-          "required": true
-        },
-        {
-          "name": "consumerKey",
-          "type": "credentials",
-          "info": "Eventful consumer key.",
-          "required": true
-        },
-        {
-          "name": "consumerSecret",
-          "type": "credentials",
-          "info": "Eventful consumer secret.",
-          "required": true
-        },
-        {
-          "name": "oauthToken",
-          "type": "String",
-          "info": "OAuth Access Token from `getAccessToken` method.",
-          "required": true
-        },
-        {
-          "name": "oauthTokenSecret",
-          "type": "String",
-          "info": "OAuth Access Token Secret from `getAccessToken` method.",
-          "required": true
-        },
-        {
-          "name": "id",
-          "type": "String",
-          "info": "The ID of the venue to which this comment is being added.",
-          "required": true
-        },
-        {
-          "name": "comment",
-          "type": "String",
-          "info": "The body of the comment message.",
-          "required": true
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "success",
-          "info": "Success"
-        },
-        {
-          "name": "error",
-          "info": "Error"
-        }
-      ]
-    },
-    {
       "name": "updateVenueComment",
       "uauth": true,
       "description": "Make changes to a venue comment.",
@@ -3389,7 +3347,7 @@
           "name": "owner",
           "type": "String",
           "info": "The Eventful username of the calendars' owner. (optional, defaults to authenticated user)",
-          "required": false
+          "required": true
         }
       ],
       "callbacks": [
@@ -3493,7 +3451,7 @@
           "required": false
         },
         {
-          "name": "id",
+          "name": "username",
           "type": "String",
           "info": "The ID of the requested user.",
           "required": true
@@ -3629,60 +3587,7 @@
           "required": false
         },
         {
-          "name": "id",
-          "type": "String",
-          "info": "The user ID.",
-          "required": true
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "success",
-          "info": "Success"
-        },
-        {
-          "name": "error",
-          "info": "Error"
-        }
-      ]
-    },
-    {
-      "name": "getUserRecentlyAddedVenues",
-      "description": "List a user's recently added venues.",
-      "auth": true,
-      "args": [
-        {
-          "name": "appKey",
-          "type": "credentials",
-          "info": "Eventful app key.",
-          "required": true
-        },
-        {
-          "name": "consumerKey",
-          "type": "credentials",
-          "info": "Eventful consumer key.",
-          "required": true
-        },
-        {
-          "name": "consumerSecret",
-          "type": "credentials",
-          "info": "Eventful consumer secret.",
-          "required": true
-        },
-        {
-          "name": "oauthToken",
-          "type": "String",
-          "info": "OAuth Access Token from `getAccessToken` method.",
-          "required": false
-        },
-        {
-          "name": "oauthTokenSecret",
-          "type": "String",
-          "info": "OAuth Access Token Secret from `getAccessToken` method.",
-          "required": false
-        },
-        {
-          "name": "id",
+          "name": "username",
           "type": "String",
           "info": "The user ID.",
           "required": true
@@ -3726,16 +3631,16 @@
           "name": "oauthToken",
           "type": "String",
           "info": "OAuth Access Token from `getAccessToken` method.",
-          "required": false
+          "required": true
         },
         {
           "name": "oauthTokenSecret",
           "type": "String",
           "info": "OAuth Access Token Secret from `getAccessToken` method.",
-          "required": false
+          "required": true
         },
         {
-          "name": "id",
+          "name": "username",
           "type": "String",
           "info": "The user ID.",
           "required": true
@@ -3785,16 +3690,16 @@
           "name": "oauthToken",
           "type": "String",
           "info": "OAuth Access Token from `getAccessToken` method.",
-          "required": false
+          "required": true
         },
         {
           "name": "oauthTokenSecret",
           "type": "String",
           "info": "OAuth Access Token Secret from `getAccessToken` method.",
-          "required": false
+          "required": true
         },
         {
-          "name": "id",
+          "name": "username",
           "type": "String",
           "info": "The user's ID. If not specified, the authenticated user by default.",
           "required": true
@@ -3838,16 +3743,16 @@
           "name": "oauthToken",
           "type": "String",
           "info": "OAuth Access Token from `getAccessToken` method.",
-          "required": false
+          "required": true
         },
         {
           "name": "oauthTokenSecret",
           "type": "String",
           "info": "OAuth Access Token Secret from `getAccessToken` method.",
-          "required": false
+          "required": true
         },
         {
-          "name": "id",
+          "name": "username",
           "type": "String",
           "info": "The user id from which to delete the locale.",
           "required": true
@@ -3856,7 +3761,7 @@
           "name": "locale",
           "type": "String",
           "info": "The name of the locale to delete.",
-          "required": false
+          "required": true
         }
       ],
       "callbacks": [
@@ -4574,65 +4479,6 @@
           "name": "imageId",
           "type": "String",
           "info": "The image ID",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "success",
-          "info": "Success"
-        },
-        {
-          "name": "error",
-          "info": "Error"
-        }
-      ]
-    },
-    {
-      "name": "removeImageFromPerformer",
-      "description": "Remove an image from a performer.",
-      "auth": true,
-      "args": [
-        {
-          "name": "appKey",
-          "type": "credentials",
-          "info": "Eventful app key.",
-          "required": true
-        },
-        {
-          "name": "consumerKey",
-          "type": "credentials",
-          "info": "Eventful consumer key.",
-          "required": true
-        },
-        {
-          "name": "consumerSecret",
-          "type": "credentials",
-          "info": "Eventful consumer secret.",
-          "required": true
-        },
-        {
-          "name": "oauthToken",
-          "type": "String",
-          "info": "OAuth Access Token from `getAccessToken` method.",
-          "required": false
-        },
-        {
-          "name": "oauthTokenSecret",
-          "type": "String",
-          "info": "OAuth Access Token Secret from `getAccessToken` method.",
-          "required": false
-        },
-        {
-          "name": "id",
-          "type": "String",
-          "info": "The performer ID.",
-          "required": true
-        },
-        {
-          "name": "imageId",
-          "type": "String",
-          "info": "The image ID.",
           "required": true
         }
       ],
