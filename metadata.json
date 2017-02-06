@@ -2063,13 +2063,13 @@
           "name": "city",
           "type": "String",
           "info": "The city name.",
-          "required": false
+          "required": true
         },
         {
           "name": "region",
           "type": "String",
           "info": "The name of the region (state, province, county) ",
-          "required": false
+          "required": true
         },
         {
           "name": "postalCode",
@@ -2081,7 +2081,7 @@
           "name": "country",
           "type": "String",
           "info": "The name of the country.",
-          "required": false
+          "required": true
         },
         {
           "name": "description",
