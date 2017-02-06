@@ -174,7 +174,7 @@
         },
         {
           "name": "venueId",
-          "type": "Number",
+          "type": "String",
           "info": "The ID of the venue where this event occurs.",
           "required": true
         },

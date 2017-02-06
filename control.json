@@ -18,7 +18,7 @@
             "String|tags": "tags",
             "Boolean|free": "free",
             "String|price": "price",
-            "Number|venueId": "$venue_id",
+            "String|venueId": "$venue_id",
             "String|parentId": "parent_id"
         }
     },
@@ -55,7 +55,7 @@
             "String|tags": "tags",
             "Boolean|free": "free",
             "String|price": "price",
-            "Number|venueId": "venue_id",
+            "String|venueId": "venue_id",
             "String|parentId": "parent_id"
         }
     },
@@ -996,7 +996,7 @@
             "String|oauthToken": "!oauth_token",
             "String|oauthTokenSecret": "!tokenSecret",
             "String|source": "$source",
-            "Number|ids": "$ids"
+            "String|ids": "$ids"
         }
     },
     "getSingleDemand": {
