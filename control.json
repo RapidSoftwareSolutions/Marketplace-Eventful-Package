@@ -731,7 +731,7 @@
             "String|listCounts": "list-counts"
         }
     },
-    "searchesUsers": {
+    "searchUsers": {
         "url": "http://api.eventful.com/rest/users/search",
         "method": "GET",
         "args": {
