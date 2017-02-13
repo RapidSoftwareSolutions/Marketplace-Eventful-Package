@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Eventful/functions?utm_source=RapidAPIGitHub_EventfulFunctions&utm_medium=button&utm_content=RapidAPI_GitHub) 
+
 # Eventful Package
 Search events and venues on Eventful's local event database.
 * Domain: eventful.com
