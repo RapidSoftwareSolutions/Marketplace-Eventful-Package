@@ -6,8 +6,15 @@ Search events and venues on Eventful's local event database.
 * Credentials: appKey, consumerKey, consumerSecret
 
 ## How to get credentials: 
-0. [Create new](http://api.eventful.com/signup) Ebentful API account 
-1. Request an application key.
+0. [Create new](http://api.eventful.com/signup) Eventful API account 
+
+![](https://storage.googleapis.com/rapid-misc-files/Screen%20Shot%202017-05-18%20at%205.22.10%20PM.png)
+
+1. Under the Get Started section, click the Request an application key button. You will be sent to a form to specify you application details.
+
+2. Fill out all your application info and click "Request a Key"
+
+3. Save your application key.
 
 ## Eventful.createEvent
 Add a new event record.
