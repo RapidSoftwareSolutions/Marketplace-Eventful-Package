@@ -9,6 +9,8 @@ const express       = require('express'),
     fs              = require('fs'),
     _               = lib.callback;
 
+var redefinition = require('./redefinition');
+
 const PORT          = process.env.PORT || 8080;
 const app           = express();
 
@@ -44,6 +46,8 @@ for(let func in control) {
             callback     : "",
             contextWrites: {}
         };
+
+        req.body.args = redefinition.override(req.body.args);
 
         try {
             for(let arg in args) {

@@ -120,13 +120,13 @@
         },
         {
           "name": "startTime",
-          "type": "String",
+          "type": "DatePicker",
           "info": "The event start time in ISO 8601 format (e.g. '2005-03-01T19:00:00') or a readable alternative (e.g. '2005-03-01 19:00:00').",
           "required": true
         },
         {
           "name": "stopTime",
-          "type": "String",
+          "type": "DatePicker",
           "info": "The event stop time, if any, in ISO 8601 format (see above).",
           "required": false
         },
@@ -150,7 +150,8 @@
         },
         {
           "name": "privacy",
-          "type": "String",
+          "type": "Select",
+          "options": ["1","2","3"],
           "info": "The privacy setting for this event. (1 = public, 2 = private, 3 = semi-private) (optional, defaults to 1)",
           "required": false
         },
@@ -305,13 +306,13 @@
         },
         {
           "name": "startTime",
-          "type": "String",
+          "type": "DatePicker",
           "info": "The event start time in ISO 8601 format (e.g. '2005-03-01T19:00:00') or a readable alternative (e.g. '2005-03-01 19:00:00').",
           "required": false
         },
         {
           "name": "stopTime",
-          "type": "String",
+          "type": "DatePicker",
           "info": "The event stop time, if any, in ISO 8601 format (see above).",
           "required": false
         },
@@ -335,7 +336,8 @@
         },
         {
           "name": "privacy",
-          "type": "String",
+          "type": "Select",
+          "options": ["1","2","3"],
           "info": "The privacy setting for this event. (1 = public, 2 = private, 3 = semi-private) (optional, defaults to 1)",
           "required": false
         },
@@ -567,7 +569,8 @@
         },
         {
           "name": "units",
-          "type": "String",
+          "type": "Select",
+          "options": ["mi","km"],
           "info": "One of \"mi\" or \"km\", the units of the \"within\" parameter. Defaults to \"mi\".",
           "required": false
         },
@@ -579,13 +582,15 @@
         },
         {
           "name": "sortOrder",
-          "type": "String",
+          "type": "Select",
+          "options": ["popularity","date","relevance"],
           "info": "One of 'popularity', 'date', or 'relevance'. Default is 'relevance'.",
           "required": false
         },
         {
           "name": "sortDirection",
-          "type": "String",
+          "type": "Select",
+          "options":["ascending","descending"],
           "info": "One of 'ascending' or 'descending'. Default varies by sort_order.",
           "required": false
         },
@@ -757,13 +762,15 @@
         },
         {
           "name": "units",
-          "type": "String",
+          "type": "Select",
+          "options": ["mi","km"],
           "info": "One of \"mi\" or \"km\", the units of the \"within\" parameter. Defaults to \"mi\".",
           "required": false
         },
         {
           "name": "sortOrder",
-          "type": "String",
+          "type": "Select",
+          "options": ["date","title","relevance","venue_name"],
           "info": "One of 'popularity', 'date', 'title', 'relevance', or 'venue_name'. Default is 'date'.",
           "required": false
         },
@@ -852,19 +859,22 @@
         },
         {
           "name": "units",
-          "type": "String",
+          "type": "Select",
+          "options": ["mi","km"],
           "info": "One of \"mi\" or \"km\", the units of the \"within\" parameter. Defaults to \"mi\"",
           "required": false
         },
         {
           "name": "sortOrder",
-          "type": "String",
+          "type": "Select",
+          "options": ["popularity","date","title","relevance","venue_name"],
           "info": "One of 'popularity', 'date', 'title', 'relevance', or 'venue_name'. Default is 'date'.",
           "required": false
         },
         {
           "name": "sortDirection",
-          "type": "String",
+          "type": "Select",
+          "options":["ascending","descending"],
           "info": "One of 'ascending' or 'descending'. Default varies by sort_order.",
           "required": false
         },
@@ -2109,7 +2119,8 @@
         },
         {
           "name": "privacy",
-          "type": "String",
+          "type": "Select",
+          "options": ["1","2","3"],
           "info": "The privacy setting for this venue. (1 = public, 2 = private, 3 = semi-private)",
           "required": false
         },
@@ -2294,7 +2305,8 @@
         },
         {
           "name": "privacy",
-          "type": "String",
+          "type": "Select",
+          "options": ["1","2","3"],
           "info": "The privacy setting for this venue. (1 = public, 2 = private, 3 = semi-private)",
           "required": false
         },
@@ -2521,7 +2533,8 @@
         },
         {
           "name": "units",
-          "type": "String",
+          "type": "Select",
+          "options": ["mi","km"],
           "info": "One of \"mi\" or \"km\", the units of the \"within\" parameter. Defaults to \"mi\".",
           "required": false
         },
@@ -2533,7 +2546,8 @@
         },
         {
           "name": "sortDirection",
-          "type": "String",
+          "type": "Select",
+          "options":["ascending","descending"],
           "info": "One of 'ascending' or 'descending'. Default varies by sort_order. ",
           "required": false
         }
@@ -3517,7 +3531,8 @@
         },
         {
           "name": "sortOrder",
-          "type": "String",
+          "type": "Select",
+          "options": ["relevance","username","event_count","venue_count","calendar_count"],
           "info": "Orders sorting of results by \"relevance\" (default), \"username\", \"event_count\", \"venue_count\", or \"calendar_count\".",
           "required": false
         },
@@ -4207,13 +4222,15 @@
         },
         {
           "name": "sortOrder",
-          "type": "String",
+          "type": "Select",
+          "options": ["relevance","name","event_count","demand_member_count","created"],
           "info": "One of 'relevance', 'name', 'event_count', 'demand_member_count', or 'created'",
           "required": false
         },
         {
           "name": "sortDirection",
-          "type": "String",
+          "type": "Select",
+          "options":["ascending","descending"],
           "info": "One of 'ascending' or 'descending'. Default is 'ascending'.",
           "required": false
         },
@@ -4725,13 +4742,15 @@
         },
         {
           "name": "sortOrder",
-          "type": "String",
+          "type": "Select",
+          "options": ["relevance","name","category","member_count","performer","created"],
           "info": "One of 'relevance', 'name', 'category', 'member_count', 'performer', or 'created'",
           "required": false
         },
         {
           "name": "sortDirection",
-          "type": "String",
+          "type": "Select",
+          "options":["ascending","descending"],
           "info": "One of 'ascending' or 'descending'. Default is 'ascending'.",
           "required": false
         },

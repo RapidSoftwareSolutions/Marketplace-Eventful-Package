@@ -1,12 +1,12 @@
-[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Eventful/functions?utm_source=RapidAPIGitHub_EventfulFunctions&utm_medium=button&utm_content=RapidAPI_GitHub) 
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Eventful/functions?utm_source=RapidAPIGitHub_EventfulFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 
 # Eventful Package
 Search events and venues on Eventful's local event database.
 * Domain: eventful.com
 * Credentials: appKey, consumerKey, consumerSecret
 
-## How to get credentials: 
-0. [Create new](http://api.eventful.com/signup) Eventful API account 
+## How to get credentials:
+0. [Create new](http://api.eventful.com/signup) Eventful API account
 
 ![](https://storage.googleapis.com/rapid-misc-files/Screen%20Shot%202017-05-18%20at%205.22.10%20PM.png)
 
@@ -16,28 +16,49 @@ Search events and venues on Eventful's local event database.
 
 3. Save your application key.
 
+## Custom datatypes:
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]```
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+ 
+## Eventful.getAccessToken
+Eventful OAuth
+
+| Field         | Type       | Description
+|---------------|------------|----------
+| appKey        | credentials| Eventful app key.
+| consumerKey   | credentials| Eventful consumer key.
+| consumerSecret| credentials| Eventful consumer secret.
+| token         | String     | OAuth Token.
+| tokenSecret   | String     | OAuth Token Secret.
+| verifier      | String     | OAuth verifier code.
+
 ## Eventful.createEvent
 Add a new event record.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| title               | String     | The event title.
-| startTime           | String     | The event start time in ISO 8601 format (e.g. '2005-03-01T19:00:00') or a readable alternative (e.g. '2005-03-01 19:00:00').
-| stopTime            | String     | The event stop time, if any, in ISO 8601 format (see above).
-| tzOlsonPath         | String     | The event timezone, as listed in the Olson timezones database (e.g. "America/New_York")
-| allDay              | Boolean    | True ("1") if the event is an all-day event, false ("0") otherwise. (optional)
-| description         | String     | The event description.
-| privacy             | String     | The privacy setting for this event. (1 = public, 2 = private, 3 = semi-private) (optional, defaults to 1)
-| tags                | String     | A space-delimited list of tags.
-| free                | Boolean    | True ("1") if the event is free, false ("0") otherwise.
-| price               | String     | A text string describing the event price. For example, this could indicate a price range ("$15 - $35"), free but donations requested ("$10 donation suggested"), or other special instructions ("Adults $15, children under eight $5"). Don't pass this parameter or leave it blank if there is no price information
-| venueId             | Number     | The ID of the venue where this event occurs.
-| parentId            | String     | The ID of this event's parent event.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| title           | String     | The event title.
+| startTime       | DatePicker | The event start time in ISO 8601 format (e.g. '2005-03-01T19:00:00') or a readable alternative (e.g. '2005-03-01 19:00:00').
+| stopTime        | DatePicker | The event stop time, if any, in ISO 8601 format (see above).
+| tzOlsonPath     | String     | The event timezone, as listed in the Olson timezones database (e.g. "America/New_York")
+| allDay          | Boolean    | True ("1") if the event is an all-day event, false ("0") otherwise. (optional)
+| description     | String     | The event description.
+| privacy         | String     | The privacy setting for this event. (1 = public, 2 = private, 3 = semi-private) (optional, defaults to 1)
+| tags            | String     | A space-delimited list of tags.
+| free            | Boolean    | True ("1") if the event is free, false ("0") otherwise.
+| price           | String     | A text string describing the event price. For example, this could indicate a price range ("$15 - $35"), free but donations requested ("$10 donation suggested"), or other special instructions ("Adults $15, children under eight $5"). Don't pass this parameter or leave it blank if there is no price information
+| venueId         | String     | The ID of the venue where this event occurs.
+| parentId        | String     | The ID of this event's parent event.
 
 ## Eventful.getSingleEvent
 Get an event record.
@@ -55,39 +76,39 @@ Get an event record.
 ## Eventful.updateSingleEvent
 Modify an event record.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The event ID to modify.
-| title               | String     | The event title.
-| startTime           | String     | The event start time in ISO 8601 format (e.g. '2005-03-01T19:00:00') or a readable alternative (e.g. '2005-03-01 19:00:00').
-| stopTime            | String     | The event stop time, if any, in ISO 8601 format (see above).
-| tzOlsonPath         | String     | The event timezone, as listed in the Olson timezones database (e.g. "America/New_York")
-| allDay              | Boolean    | True ("1") if the event is an all-day event, false ("0") otherwise. (optional)
-| description         | String     | The event description.
-| privacy             | String     | The privacy setting for this event. (1 = public, 2 = private, 3 = semi-private) (optional, defaults to 1)
-| tags                | String     | A space-delimited list of tags.
-| free                | Boolean    | True ("1") if the event is free, false ("0") otherwise.
-| price               | String     | A text string describing the event price. For example, this could indicate a price range ("$15 - $35"), free but donations requested ("$10 donation suggested"), or other special instructions ("Adults $15, children under eight $5"). Don't pass this parameter or leave it blank if there is no price information
-| venueId             | Number     | The ID of the venue where this event occurs.
-| parentId            | String     | The ID of this event's parent event.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The event ID to modify.
+| title           | String     | The event title.
+| startTime       | DatePicker | The event start time in ISO 8601 format (e.g. '2005-03-01T19:00:00') or a readable alternative (e.g. '2005-03-01 19:00:00').
+| stopTime        | DatePicker | The event stop time, if any, in ISO 8601 format (see above).
+| tzOlsonPath     | String     | The event timezone, as listed in the Olson timezones database (e.g. "America/New_York")
+| allDay          | Boolean    | True ("1") if the event is an all-day event, false ("0") otherwise. (optional)
+| description     | String     | The event description.
+| privacy         | Select     | The privacy setting for this event. (1 = public, 2 = private, 3 = semi-private) (optional, defaults to 1)
+| tags            | String     | A space-delimited list of tags.
+| free            | Boolean    | True ("1") if the event is free, false ("0") otherwise.
+| price           | String     | A text string describing the event price. For example, this could indicate a price range ("$15 - $35"), free but donations requested ("$10 donation suggested"), or other special instructions ("Adults $15, children under eight $5"). Don't pass this parameter or leave it blank if there is no price information
+| venueId         | Number     | The ID of the venue where this event occurs.
+| parentId        | String     | The ID of this event's parent event.
 
 ## Eventful.deleteSingleEvent
 Withdraw (delete, remove) an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The id of the requested event.
-| note                | String     | An optional note describing why the event has been withdrawn.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The id of the requested event.
+| note            | String     | An optional note describing why the event has been withdrawn.
 
 ## Eventful.restoreSingleEvent
 Restore a withdrawn event.
@@ -117,7 +138,7 @@ Search for events.
 | category           | String     | Limit the search results to this category ID. A list of categories may be specified separated by commas. See /categories/list for a list of categories and their IDs.
 | exCategory         | String     | Exclude search results from including this category ID.
 | within             | String     | If within is set and the "location" parameter resolves to a specific geolocation, the search will be restricted to the specified radius. If the "location" parameter does not resolve to a specific location, this parameter is ignored.
-| units              | String     | One of "mi" or "km", the units of the "within" parameter. Defaults to "mi".
+| units              | Select     | One of "mi" or "km", the units of the "within" parameter. Defaults to "mi".
 | countOnly          | String     | If count_only is set, an abbreviated version of the output will be returned. Only total_items and search_time elements are included in the result.
 | sortOrder          | String     | One of 'popularity', 'date', or 'relevance'. Default is 'relevance'.
 | sortDirection      | String     | One of 'ascending' or 'descending'. Default varies by sort_order.
@@ -206,211 +227,214 @@ List all users going to an event.
 ## Eventful.addEventTags
 Add tags to an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The ID of the event to which these tags are being added.
-| tags                | String     | The ID of the event to which these tags are being added.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The ID of the event to which these tags are being added.
+| tags            | String     | The ID of the event to which these tags are being added.
 
 ## Eventful.removeEventTags
 Remove tags from an event. Note: This method was previously called delete but has been renamed remove
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The ID of the event from which these tags are being deleted.
-| tags                | String     | A space-delimited list of tags. Tags with spaces should be enclosed in quotes (e.g. "San Diego").
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The ID of the event from which these tags are being deleted.
+| tags            | String     | A space-delimited list of tags. Tags with spaces should be enclosed in quotes (e.g. "San Diego").
 
 ## Eventful.addEventComment
 Add a comment to an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The ID of the event to which this comment is being added.
-| comment             | String     | The body of the comment message.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The ID of the event to which this comment is being added.
+| comment         | String     | The body of the comment message.
 
 ## Eventful.updateEventComment
 Make changes to an event comment.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| commentId           | String     | The ID of the comment to modify.
-| comment             | String     | The new, modified comment to save.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| eventId         | String     | Event ID.
+| commentId       | String     | The ID of the comment to modify.
+| comment         | String     | The new, modified comment to save.
 
 ## Eventful.removeEventComment
 Remove a comment from an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| commentId           | String     | The ID of the comment to be deleted.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| eventId         | String     | Event ID.
+| commentId       | String     | The ID of the comment to be deleted.
 
 ## Eventful.addEventURL
 Add a URL to an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The ID of the event to which this link is being added.
-| link                | String     | The URL of the link.
-| description         | String     | The title of the link. 
-| linkTypeId          | String     | The ID of the link type, as found in this list: 15: Blog, Box Office; 8: Chat; 23: Facebook; 1: Info; 21: Myspace; 3: News; 17: Official Site; 18: Podcast; 4: Review; 5: Sponsor; 6: Tickets; 14: Webcast; 19: Website; 20: Wiki; 16: Other
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The ID of the event to which this link is being added.
+| link            | String     | The URL of the link.
+| description     | String     | The title of the link. 
+| linkTypeId      | String     | The ID of the link type, as found in this list: 15: Blog, Box Office; 8: Chat; 23: Facebook; 1: Info; 21: Myspace; 3: News; 17: Official Site; 18: Podcast; 4: Review; 5: Sponsor; 6: Tickets; 14: Webcast; 19: Website; 20: Wiki; 16: Other
 
 ## Eventful.removeEventURL
 Remove a URL from an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| linkId              | String     | The ID of the requested event.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| eventId         | String     | Event ID.
+| linkId          | String     | The ID of the requested event.
 
 ## Eventful.addEventImage
 Add an image to an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The event ID.
-| imageId             | String     | The image ID.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The event ID.
+| imageId         | String     | The image ID.
 
 ## Eventful.removeEventImage
 Remove an image from an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The event ID.
-| imageId             | String     | The image ID.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The event ID.
+| imageId         | String     | The image ID.
 
 ## Eventful.addEventPerformer
 Add a performer to an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The event ID.
-| performerId         | String     | The performer ID.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The event ID.
+| performerId     | String     | The performer ID.
 
 ## Eventful.removeEventPerformer
 Remove a performer from an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The event ID.
-| performerId         | String     | The performer ID.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The event ID.
+| performerId     | String     | The performer ID.
 
 ## Eventful.addEventProperty
 Add a property to an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The event ID.
-| name                | String     | The property name.
-| value               | String     | The property value.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The event ID.
+| name            | String     | The property name.
+| value           | String     | The property value.
 
 ## Eventful.getEventsProperties
 List properties for an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The ID of the event.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The ID of the event.
 
 ## Eventful.removeEventProperty
 Remove a property from an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The event ID.
-| propertyId          | String     | The ID of the property to remove
-| name                | String     | The name of the property to remove. NOTE: if name is specified, any property with this name will be removed from this event.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The event ID.
+| propertyId      | String     | The ID of the property to remove
+| name            | String     | The name of the property to remove. NOTE: if name is specified, any property with this name will be removed from this event.
 
 ## Eventful.addEventCategory
 Add a category to an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The event ID.
-| categoryId          | String     | The category ID.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The event ID.
+| categoryId      | String     | The category ID.
 
 ## Eventful.removeEventCategory
 Remove a category from an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The event ID.
-| categoryId          | String     | The category ID.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The event ID.
+| categoryId      | String     | The category ID.
 
 ## Eventful.resolveDatesFromDateString
 Resolve start and end dates from a date string.
@@ -427,25 +451,25 @@ Resolve start and end dates from a date string.
 ## Eventful.createVenue
 Add a new venue record.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| name                | String     | The displayed name for this venue.
-| address             | String     | The street address of the venue. (
-| city                | String     | The city name.
-| region              | String     | The name of the region (state, province, county) 
-| postalCode          | String     | The postal code or ZIP code.
-| country             | String     | The name of the country.
-| description         | String     | The venue description.
-| privacy             | String     | The privacy setting for this venue. (1 = public, 2 = private, 3 = semi-private)
-| venueType           | String     | The type of venue (e.g. Cinema, Arena).
-| url                 | String     | A URI link to further information about this venue.
-| urlType             | String     | 
-| parentId            | String     | The ID of this venue's parent venue.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| name            | String     | The displayed name for this venue.
+| address         | String     | The street address of the venue. (
+| city            | String     | The city name.
+| region          | String     | The name of the region (state, province, county) 
+| postalCode      | String     | The postal code or ZIP code.
+| country         | String     | The name of the country.
+| description     | String     | The venue description.
+| privacy         | String     | The privacy setting for this venue. (1 = public, 2 = private, 3 = semi-private)
+| venueType       | String     | The type of venue (e.g. Cinema, Arena).
+| url             | String     | A URI link to further information about this venue.
+| urlType         | String     | 
+| parentId        | String     | The ID of this venue's parent venue.
 
 ## Eventful.getSingleVenue
 Get a venue record.
@@ -463,51 +487,51 @@ Get a venue record.
 ## Eventful.updateSingleVenue
 Make changes to a venue.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The venue ID to modify.
-| name                | String     | The displayed name for this venue.
-| address             | String     | The street address of the venue. (
-| city                | String     | The city name.
-| region              | String     | The name of the region (state, province, county) 
-| postalCode          | String     | The postal code or ZIP code.
-| country             | String     | The name of the country.
-| description         | String     | The venue description.
-| privacy             | String     | The privacy setting for this venue. (1 = public, 2 = private, 3 = semi-private)
-| venueType           | String     | The type of venue (e.g. Cinema, Arena).
-| url                 | String     | A URI link to further information about this venue.
-| urlType             | String     | 
-| parentId            | String     | The ID of this venue's parent venue.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The venue ID to modify.
+| name            | String     | The displayed name for this venue.
+| address         | String     | The street address of the venue. (
+| city            | String     | The city name.
+| region          | String     | The name of the region (state, province, county) 
+| postalCode      | String     | The postal code or ZIP code.
+| country         | String     | The name of the country.
+| description     | String     | The venue description.
+| privacy         | String     | The privacy setting for this venue. (1 = public, 2 = private, 3 = semi-private)
+| venueType       | String     | The type of venue (e.g. Cinema, Arena).
+| url             | String     | A URI link to further information about this venue.
+| urlType         | String     | 
+| parentId        | String     | The ID of this venue's parent venue.
 
 ## Eventful.deleteSingleVenue
 Withdraw (delete, remove) a venue.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The id of the requested venue.
-| note                | String     | An optional note describing why the venue has been withdrawn.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The id of the requested venue.
+| note            | String     | An optional note describing why the venue has been withdrawn.
 
 ## Eventful.restoreSingleVenue
 Restore a withdrawn venue.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The id of the requested venue.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The id of the requested venue.
 
 ## Eventful.searchVenues
 Search for venues.
@@ -544,28 +568,28 @@ List all tags attached to an venue.
 ## Eventful.addVenueTags
 Adds a new tag to an venue.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| tags                | String     | A space-delimited list of tags. Tags with spaces should be enclosed in quotes
-| id                  | String     | The ID of the venue to which these tags are being added.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| tags            | String     | A space-delimited list of tags. Tags with spaces should be enclosed in quotes
+| id              | String     | The ID of the venue to which these tags are being added.
 
 ## Eventful.deleteVenueTags
 Remove tags from an venue.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The ID of the venue from which these tags are being deleted.
-| tags                | String     | A space-delimited list of tags. Tags with spaces should be enclosed in quotes (e.g. "San Diego").
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The ID of the venue from which these tags are being deleted.
+| tags            | String     | A space-delimited list of tags. Tags with spaces should be enclosed in quotes (e.g. "San Diego").
 
 ## Eventful.getICalendarVenueFormat
 Get events at a venue in iCalendar format.
@@ -591,84 +615,71 @@ Get events at a venue in RSS format.
 | oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
 | id              | String     | The id of the venue to use as the feed source.
 
-## Eventful.addVenueComment
-Add a comment to a venue.
-
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The ID of the venue to which this comment is being added.
-| comment             | String     | The body of the comment message.
-
 ## Eventful.updateVenueComment
 Make changes to a venue comment.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| commentId           | String     | The ID of the comment to modify.
-| comment             | String     | The new, modified comment to save.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| commentId       | String     | The ID of the comment to modify.
+| comment         | String     | The new, modified comment to save.
 
 ## Eventful.removeVenueComment
 Remove a comment from a venue.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| commentId           | String     | The ID of the comment to be deleted.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| commentId       | String     | The ID of the comment to be deleted.
 
 ## Eventful.addVenueURL
 Add a URL to a venue.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The ID of the venue to which this link is being added.
-| link                | String     | The URL of the link.
-| description         | String     | The title of the link.
-| linkTypeId          | String     | The ID of the link type, as found in this list: 15: Blog, Box Office; 8: Chat; 23: Facebook; 1: Info; 21: Myspace; 3: News; 17: Official Site; 18: Podcast; 4: Review; 5: Sponsor; 6: Tickets; 14: Webcast; 19: Website; 20: Wiki; 16: Other
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The ID of the venue to which this link is being added.
+| link            | String     | The URL of the link.
+| description     | String     | The title of the link.
+| linkTypeId      | String     | The ID of the link type, as found in this list: 15: Blog, Box Office; 8: Chat; 23: Facebook; 1: Info; 21: Myspace; 3: News; 17: Official Site; 18: Podcast; 4: Review; 5: Sponsor; 6: Tickets; 14: Webcast; 19: Website; 20: Wiki; 16: Other
 
 ## Eventful.removeVenueURL
 Remove a URL from an event.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| linkId              | String     | The ID of the link to be deleted.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| linkId          | String     | The ID of the link to be deleted.
 
 ## Eventful.addVenueProperty
 Add a property to an venue.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The venue ID.
-| name                | String     | The property name.
-| value               | String     | The property value.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The venue ID.
+| name            | String     | The property name.
+| value           | String     | The property value.
 
 ## Eventful.getVenueProperties
 List properties for an venue.
@@ -685,52 +696,52 @@ List properties for an venue.
 ## Eventful.removeVenueProperty
 Remove a property from an venue.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The venue ID.
-| propertyId          | String     | The ID of the property to remove
-| name                | String     | The name of the property to remove. NOTE: if name is specified, any property with this name will be removed from this venue.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The venue ID.
+| propertyId      | String     | The ID of the property to remove
+| name            | String     | The name of the property to remove. NOTE: if name is specified, any property with this name will be removed from this venue.
 
 ## Eventful.resolveVenueFromLocationString
 Resolve a venue from a location string.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| location            | String     | A venue name and/or city.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| location        | String     | A venue name and/or city.
 
 ## Eventful.getUserCalendars
 List a user's calendars.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| owner               | String     | The Eventful username of the calendars' owner. (optional, defaults to authenticated user)
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| owner           | String     | The Eventful username of the calendars' owner. (optional, defaults to authenticated user)
 
 ## Eventful.getSingleCalendar
 Get the settings for a user's calendar.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The calendar ID.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The calendar ID.
 
 ## Eventful.getUser
 Get a user record.
@@ -742,10 +753,10 @@ Get a user record.
 | consumerSecret  | credentials| Eventful consumer secret.
 | oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
 | oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
-| id              | String     | The ID of the requested user.
+| username        | String     | The ID of the requested user.
 | listCounts      | String     | List counts of user activity. Set to 1 to display this data.
 
-## Eventful.searchesUsers
+## Eventful.searchUsers
 Searches for users.
 
 | Field           | Type       | Description
@@ -771,19 +782,7 @@ List the groups of which a user is a member.
 | consumerSecret  | credentials| Eventful consumer secret.
 | oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
 | oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
-| id              | String     | The user ID.
-
-## Eventful.getUserRecentlyAddedVenues
-List a user's recently added venues.
-
-| Field           | Type       | Description
-|-----------------|------------|----------
-| appKey          | credentials| Eventful app key.
-| consumerKey     | credentials| Eventful consumer key.
-| consumerSecret  | credentials| Eventful consumer secret.
-| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
-| id              | String     | The user ID.
+| username        | String     | The user ID.
 
 ## Eventful.addLocaleToUserLocations
 Add a locale to a user's saved locations.
@@ -795,7 +794,7 @@ Add a locale to a user's saved locations.
 | consumerSecret  | credentials| Eventful consumer secret.
 | oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
 | oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
-| id              | String     | The user ID.
+| username        | String     | The user ID.
 | locale          | String     | The locale to add to the user.
 
 ## Eventful.getUserLocations
@@ -808,7 +807,7 @@ List a user's saved locations.
 | consumerSecret  | credentials| Eventful consumer secret.
 | oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
 | oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
-| id              | String     | The user's ID. If not specified, the authenticated user by default.
+| username        | String     | The user's ID. If not specified, the authenticated user by default.
 
 ## Eventful.deleteLocaleFromUserLocations
 Delete a locale from a user's saved locations.
@@ -820,60 +819,60 @@ Delete a locale from a user's saved locations.
 | consumerSecret  | credentials| Eventful consumer secret.
 | oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
 | oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
-| id              | String     | The user id from which to delete the locale.
+| username        | String     | The user id from which to delete the locale.
 | locale          | String     | The name of the locale to delete.
 
 ## Eventful.marksUserAsGoingToEvent
 Removes a user from an event's "I'm going" list.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| eventId             | String     | The event ID.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| eventId         | String     | The event ID.
 
 ## Eventful.removeUserFromGoingToEvent
 Removes a user from an event's "I'm going" list.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| eventId             | String     | The event ID.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| eventId         | String     | The event ID.
 
 ## Eventful.addSingleImage
 Add an image to a performer.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| image               | File       | File upload URL from which to retrieve the image file.
-| caption             | String     | A caption for this image.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| image           | File       | File upload URL from which to retrieve the image file.
+| caption         | String     | A caption for this image.
 
 ## Eventful.createSinglePerformer
 Add an image to a performer.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| name                | String     | The name of this performer.
-| shortBio            | String     | A short biography of this performer.
-| longBio             | String     | A detailed biography of this performer.
-| tags                | String     | A space-delimited list of tags.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| name            | String     | The name of this performer.
+| shortBio        | String     | A short biography of this performer.
+| longBio         | String     | A detailed biography of this performer.
+| tags            | String     | A space-delimited list of tags.
 
 ## Eventful.getSinglePerformer
 Get the details for a performer.
@@ -892,18 +891,18 @@ Get the details for a performer.
 ## Eventful.updateSinglePerformer
 Modify a performer.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The ID of the performer object to modify.
-| name                | String     | The name of this performer.
-| shortBio            | String     | A short biography of this performer.
-| longBio             | String     | A detailed biography of this performer.
-| tags                | String     | A space-delimited list of tags.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The ID of the performer object to modify.
+| name            | String     | The name of this performer.
+| shortBio        | String     | A short biography of this performer.
+| longBio         | String     | A detailed biography of this performer.
+| tags            | String     | A space-delimited list of tags.
 
 ## Eventful.searchPerformers
 Search for performers.
@@ -925,59 +924,18 @@ Search for performers.
 ## Eventful.deleteSinglePerformer
 Delete a performer.
 
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The performer ID to withdraw.
-| note                | String     | A short reason why this performer was withdrawn.
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The performer ID to withdraw.
+| note            | String     | A short reason why this performer was withdrawn.
 
 ## Eventful.addLinksToPerformer
 Add links to an performer.
-
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The performer ID.
-| link                | String     | The link url being added.
-| description         | String     | Description of the link being added.
-| linkTypeId          | String     | The type of link being added. Corresponds to one of the follow values: 1 Info; 2 Office; 3 News; 4 Review; 5 Sponsor; 6 Tickets; 8 Chat; 14 Webcast; 15 Blog; 16 Other; 17 Official Site; 18 Podcast; 19 Website;; 20 Wiki; 21 MySpace; 22 Ringtone; 23 Facebook; 24 Official Tickets; 25 Twitter
-
-## Eventful.removeLinksFromPerformer
-Remove links from an performer.
-
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The performer ID.
-| linkId              | Number     | The link_id of the link being removed.
-
-## Eventful.addImageToPerformer
-Add an image to a performer.
-
-| Field               | Type       | Description
-|---------------------|------------|----------
-| appKey              | credentials| Eventful app key.
-| consumerKey         | credentials| Eventful consumer key.
-| consumerSecret      | credentials| Eventful consumer secret.
-| oauthToken          | String     | OAuth Access Token from `getAccessToken` method.
-| oauthTokenSecret    | String     | OAuth Access Token Secret from `getAccessToken` method.
-| id                  | String     | The performer ID.
-| imageId             | String     | The image ID
-
-## Eventful.removeImageFromPerformer
-Remove an image from a performer.
 
 | Field           | Type       | Description
 |-----------------|------------|----------
@@ -987,7 +945,35 @@ Remove an image from a performer.
 | oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
 | oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
 | id              | String     | The performer ID.
-| imageId         | String     | The image ID.
+| link            | String     | The link url being added.
+| description     | String     | Description of the link being added.
+| linkTypeId      | String     | The type of link being added. Corresponds to one of the follow values: 1 Info; 2 Office; 3 News; 4 Review; 5 Sponsor; 6 Tickets; 8 Chat; 14 Webcast; 15 Blog; 16 Other; 17 Official Site; 18 Podcast; 19 Website;; 20 Wiki; 21 MySpace; 22 Ringtone; 23 Facebook; 24 Official Tickets; 25 Twitter
+
+## Eventful.removeLinksFromPerformer
+Remove links from an performer.
+
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The performer ID.
+| linkId          | Number     | The link_id of the link being removed.
+
+## Eventful.addImageToPerformer
+Add an image to a performer.
+
+| Field           | Type       | Description
+|-----------------|------------|----------
+| appKey          | credentials| Eventful app key.
+| consumerKey     | credentials| Eventful consumer key.
+| consumerSecret  | credentials| Eventful consumer secret.
+| oauthToken      | String     | OAuth Access Token from `getAccessToken` method.
+| oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
+| id              | String     | The performer ID.
+| imageId         | String     | The image ID
 
 ## Eventful.getPerformerEvents
 Get all events for a performer.
@@ -1058,3 +1044,4 @@ List the available categories.
 | oauthTokenSecret| String     | OAuth Access Token Secret from `getAccessToken` method.
 | subcategories   | String     | Optional - set to 1 to get subcategory information back.
 | aliases         | String     | Optional - set to 1 to get category aliases back in the results.
+
