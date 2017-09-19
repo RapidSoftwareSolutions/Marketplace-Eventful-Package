@@ -23,7 +23,7 @@
     ]
   },
   "steps": [
-    "Create new Eventful API account",
+    "Create a new Eventful API account (http://api.eventful.com/signup)",
     "Under the Get Started section, click the Request an application key button. You will be sent to a form to specify you application details",
     "Fill out all your application info and click 'Request a Key'",
     "Save your application key"
